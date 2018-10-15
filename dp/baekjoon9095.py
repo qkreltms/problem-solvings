@@ -1,3 +1,8 @@
+#https://www.acmicpc.net/problem/9095
+#디버깅 노트
+#3일 때
+#d[2] = 1 + 1 = (1,1,1), (1,2)
+#d[3] = 2 + 1 + 1 = d[2] + (2, 1), (3)g
 def f(i):
     if i <= 1:
         return 1
