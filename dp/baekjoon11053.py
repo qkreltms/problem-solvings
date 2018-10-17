@@ -7,4 +7,4 @@ for i in range(n):
     for j in range(i):
         if A[i] > A[j]:
             d[i] = max(d[i], d[j]+1)
-print(max(d))
+print(max(d)) #10 20 10 일 때 1이 나오므로 가장 최대값을 출력해줌
