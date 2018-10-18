@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f4aef1a3-e02c-4a8d-ad66-a103b76f0d93" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/dp/baekjoon11055.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dp/baekjoon11054.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dp/baekjoon11722.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -45,7 +46,16 @@
         <entry file="file://$PROJECT_DIR$/dp/baekjoon11053.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="171">
-              <caret line="9" column="28" lean-forward="true" selection-end-line="9" selection-end-column="48" />
+              <caret line="9" column="5" lean-forward="true" selection-end-line="9" selection-end-column="48" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="baekjoon11054.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/dp/baekjoon11054.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="532">
+              <caret line="31" column="18" lean-forward="true" selection-start-line="31" selection-start-column="18" selection-end-line="31" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -59,11 +69,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="baekjoon11055.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="baekjoon11055.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dp/baekjoon11055.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="57">
-              <caret line="3" column="17" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
+            <state relative-caret-position="133">
+              <caret line="7" column="17" lean-forward="true" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="baekjoon11722.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dp/baekjoon11722.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="171">
+              <caret line="9" column="13" lean-forward="true" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -90,10 +109,12 @@
         <option value="$PROJECT_DIR$/dp/baekjoon11053.py" />
         <option value="$PROJECT_DIR$/dp/baekjoon1793.py" />
         <option value="$PROJECT_DIR$/dp/baekjoon11055.py" />
+        <option value="$PROJECT_DIR$/dp/baekjoon11722.py" />
+        <option value="$PROJECT_DIR$/dp/baekjoon11054.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="x" value="952" />
     <option name="width" value="977" />
     <option name="height" value="1038" />
@@ -140,25 +161,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.baekjoon11055">
-    <configuration name="baekjoon11052" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="algorithm" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/dp" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/dp/baekjoon11052.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
+  <component name="RunManager" selected="Python.baekjoon11054">
     <configuration name="baekjoon11053" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="algorithm" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -172,6 +175,24 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/dp/baekjoon11053.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="baekjoon11054" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="algorithm" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/dp" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/dp/baekjoon11054.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -232,19 +253,19 @@
       <option name="MODULE_MODE" value="false" />
     </configuration>
     <list>
-      <item itemvalue="Python.baekjoon11052" />
       <item itemvalue="Python.baekjoon11727" />
       <item itemvalue="Python.baekjoon11053" />
       <item itemvalue="Python.baekjoon1793" />
       <item itemvalue="Python.baekjoon11055" />
+      <item itemvalue="Python.baekjoon11054" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.baekjoon11054" />
+        <item itemvalue="Python.baekjoon11053" />
         <item itemvalue="Python.baekjoon11055" />
         <item itemvalue="Python.baekjoon1793" />
-        <item itemvalue="Python.baekjoon11053" />
         <item itemvalue="Python.baekjoon11727" />
-        <item itemvalue="Python.baekjoon11052" />
       </list>
     </recent_temporary>
   </component>
@@ -262,8 +283,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="762" y="0" width="781" height="830" extended-state="0" />
-    <editor active="true" />
+    <frame x="762" y="0" width="781" height="830" extended-state="1" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.29204693" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -272,7 +292,7 @@
       <window_info anchor="bottom" id="Python Console" order="7" />
       <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32686982" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.1360677" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.3356546" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.33518004" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -386,6 +406,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/dp/baekjoon11722.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" column="13" lean-forward="true" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dp/baekjoon11055.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="17" lean-forward="true" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dp/baekjoon11053.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" column="5" lean-forward="true" selection-end-line="9" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/dp/baekjoon11727.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
@@ -393,17 +434,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dp/baekjoon11053.py">
+    <entry file="file://$PROJECT_DIR$/dp/baekjoon11054.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="28" lean-forward="true" selection-end-line="9" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dp/baekjoon11055.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" column="17" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
+        <state relative-caret-position="532">
+          <caret line="31" column="18" lean-forward="true" selection-start-line="31" selection-start-column="18" selection-end-line="31" selection-end-column="18" />
         </state>
       </provider>
     </entry>
