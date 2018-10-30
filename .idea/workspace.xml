@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f4aef1a3-e02c-4a8d-ad66-a103b76f0d93" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/dp/baekjoon13225.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/algorithmic_problem_solving_strategies/festival.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dp/baekjoon2501.py" beforeDir="false" afterPath="$PROJECT_DIR$/dp/baekjoon2501.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -20,15 +19,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="114">
               <caret line="6" column="11" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="baekjoon11053.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dp/baekjoon11053.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="9" column="45" selection-start-line="9" selection-start-column="45" selection-end-line="9" selection-end-column="45" />
             </state>
           </provider>
         </entry>
@@ -52,7 +42,7 @@
         </entry>
       </file>
       <file leaf-file-name="baekjoon2501.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dp/baekjoon2501.py">
+        <entry file="file://$PROJECT_DIR$/etc/baekjoon2501.py">
           <provider selected="true" editor-type-id="text-editor">
             <state>
               <caret column="1" selection-start-column="1" selection-end-column="1" />
@@ -60,8 +50,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="baekjoon13225.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/dp/baekjoon13225.py">
+      <file leaf-file-name="festival.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/algorithmic_problem_solving_strategies/festival.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="114">
+              <caret line="6" column="20" lean-forward="true" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="baekjoon13225.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/etc/baekjoon13225.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="285">
               <caret line="15" column="17" lean-forward="true" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
@@ -133,13 +132,15 @@
         <option value="$PROJECT_DIR$/dp/baekjoon2579.py" />
         <option value="$PROJECT_DIR$/dp/baekjoon2501.py" />
         <option value="$PROJECT_DIR$/dp/baekjoon13225.py" />
+        <option value="$PROJECT_DIR$/algorithmic_problem_solving_strategies/festival.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="776" />
+    <option name="x" value="892" />
+    <option name="y" value="6" />
     <option name="width" value="978" />
-    <option name="height" value="1039" />
+    <option name="height" value="1043" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -157,7 +158,7 @@
             <path>
               <item name="algorithm" type="b2602c69:ProjectViewProjectNode" />
               <item name="algorithm" type="462c0819:PsiDirectoryNode" />
-              <item name="dp" type="462c0819:PsiDirectoryNode" />
+              <item name="algorithmic_problem_solving_strategies" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -168,6 +169,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Happy\PycharmProjects\algorithm\etc" />
       <recent name="C:\Users\Happy\PycharmProjects\algorithm\dp" />
     </key>
   </component>
@@ -183,7 +185,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.baekjoon13225">
+  <component name="RunManager" selected="Python.festival">
     <configuration name="baekjoon11054" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="algorithm" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -214,25 +216,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/dp/baekjoon13225.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
-    <configuration name="baekjoon1912" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="algorithm" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/dp" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/dp/baekjoon1912.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\Happy\PycharmProjects\algorithm\etc\baekjoon13225.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -250,7 +234,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/dp/baekjoon2501.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\Happy\PycharmProjects\algorithm\etc\baekjoon2501.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -274,20 +258,38 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
+    <configuration name="festival" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="algorithm" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/algorithmic_problem_solving_strategies" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/algorithmic_problem_solving_strategies/festival.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
     <list>
       <item itemvalue="Python.baekjoon11054" />
-      <item itemvalue="Python.baekjoon1912" />
       <item itemvalue="Python.baekjoon2579" />
       <item itemvalue="Python.baekjoon2501" />
       <item itemvalue="Python.baekjoon13225" />
+      <item itemvalue="Python.festival" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.festival" />
         <item itemvalue="Python.baekjoon13225" />
         <item itemvalue="Python.baekjoon2501" />
         <item itemvalue="Python.baekjoon2579" />
         <item itemvalue="Python.baekjoon11054" />
-        <item itemvalue="Python.baekjoon1912" />
       </list>
     </recent_temporary>
   </component>
@@ -305,7 +307,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="621" y="0" width="782" height="831" extended-state="0" />
+    <frame x="930" y="0" width="782" height="830" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.29166666" />
@@ -313,9 +315,9 @@
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32226834" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3227147" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.1360677" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.3365651" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.3360996" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -329,6 +331,18 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/algorithmic_problem_solving_strategies/festival.py</url>
+          <line>17</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="7" />
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/dp/baekjoon9095.py">
@@ -667,17 +681,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dp/baekjoon2501.py">
+    <entry file="file://$PROJECT_DIR$/etc/baekjoon13225.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="15" column="17" lean-forward="true" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/etc/baekjoon2501.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="1" selection-start-column="1" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dp/baekjoon13225.py">
+    <entry file="file://$PROJECT_DIR$/algorithmic_problem_solving_strategies/festival.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="15" column="17" lean-forward="true" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
+        <state relative-caret-position="114">
+          <caret line="6" column="20" lean-forward="true" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
         </state>
       </provider>
     </entry>
