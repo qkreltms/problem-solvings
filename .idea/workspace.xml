@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f4aef1a3-e02c-4a8d-ad66-a103b76f0d93" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/dp/baekjoon2670.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/algorithmic_problem_solving_strategies/순환소수" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/etc/bfs.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -62,7 +63,7 @@
       <file leaf-file-name="baekjoon1699.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dp/baekjoon1699.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
+            <state relative-caret-position="399">
               <caret line="21" column="9" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
               <folding>
                 <marker date="1541401797565" expanded="true" signature="5:169" ph="..." />
@@ -71,11 +72,29 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="baekjoon2670.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="baekjoon2670.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dp/baekjoon2670.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="19">
-              <caret line="1" column="16" lean-forward="true" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
+              <caret line="1" column="16" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bfs.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/etc/bfs.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-38">
+              <caret line="19" column="39" selection-start-line="19" selection-start-column="39" selection-end-line="19" selection-end-column="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="순환소수" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/algorithmic_problem_solving_strategies/순환소수">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="171">
+              <caret line="9" column="3" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -85,24 +104,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="285">
               <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="baekjoon11055.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dp/baekjoon11055.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="baekjoon11722.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dp/baekjoon11722.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -138,12 +139,15 @@
         <option value="$PROJECT_DIR$/algorithmic_problem_solving_strategies/festival.py" />
         <option value="$PROJECT_DIR$/dp/baekjoon1699.py" />
         <option value="$PROJECT_DIR$/dp/baekjoon2670.py" />
+        <option value="$PROJECT_DIR$/etc/bfs.py" />
+        <option value="$PROJECT_DIR$/algorithmic_problem_solving_strategies/순환소수.py" />
+        <option value="$PROJECT_DIR$/algorithmic_problem_solving_strategies/순환소수" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1117" />
-    <option name="y" value="106" />
+    <option name="x" value="425" />
+    <option name="y" value="451" />
     <option name="width" value="980" />
     <option name="height" value="1045" />
   </component>
@@ -168,7 +172,7 @@
             <path>
               <item name="algorithm" type="b2602c69:ProjectViewProjectNode" />
               <item name="algorithm" type="462c0819:PsiDirectoryNode" />
-              <item name="dp" type="462c0819:PsiDirectoryNode" />
+              <item name="etc" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -195,7 +199,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.baekjoon2670">
+  <component name="RunManager" selected="Python.bfs">
     <configuration name="baekjoon13225" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="algorithm" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -232,24 +236,6 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="baekjoon2501" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="algorithm" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/dp" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="C:\Users\Happy\PycharmProjects\algorithm\etc\baekjoon2501.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
     <configuration name="baekjoon2670" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="algorithm" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -263,6 +249,24 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/dp/baekjoon2670.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="bfs" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="algorithm" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/etc" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/etc/bfs.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -287,19 +291,19 @@
       <option name="MODULE_MODE" value="false" />
     </configuration>
     <list>
-      <item itemvalue="Python.baekjoon2501" />
       <item itemvalue="Python.baekjoon13225" />
       <item itemvalue="Python.festival" />
       <item itemvalue="Python.baekjoon1699" />
       <item itemvalue="Python.baekjoon2670" />
+      <item itemvalue="Python.bfs" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.bfs" />
         <item itemvalue="Python.baekjoon2670" />
         <item itemvalue="Python.baekjoon1699" />
         <item itemvalue="Python.festival" />
         <item itemvalue="Python.baekjoon13225" />
-        <item itemvalue="Python.baekjoon2501" />
       </list>
     </recent_temporary>
   </component>
@@ -325,9 +329,9 @@
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32054794" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32054794" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.1360677" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.33607683" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.33561644" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -355,27 +359,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/dp/baekjoon11727.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" column="11" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dp/baekjoon11053.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="45" selection-start-line="9" selection-start-column="45" selection-end-line="9" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dp/baekjoon11054.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="15" column="22" lean-forward="true" selection-end-line="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dp/baekjoon1793.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
@@ -700,7 +683,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dp/baekjoon1699.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
+        <state relative-caret-position="399">
           <caret line="21" column="9" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
           <folding>
             <marker date="1541401797565" expanded="true" signature="5:169" ph="..." />
@@ -711,7 +694,28 @@
     <entry file="file://$PROJECT_DIR$/dp/baekjoon2670.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="19">
-          <caret line="1" column="16" lean-forward="true" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
+          <caret line="1" column="16" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/algorithmic_problem_solving_strategies/순환소수.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3040">
+          <caret line="160" column="1" selection-start-line="160" selection-start-column="1" selection-end-line="160" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/etc/bfs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-38">
+          <caret line="19" column="39" selection-start-line="19" selection-start-column="39" selection-end-line="19" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/algorithmic_problem_solving_strategies/순환소수">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" column="3" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
         </state>
       </provider>
     </entry>
