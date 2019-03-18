@@ -28,6 +28,6 @@
 def f(n):
     for i in range(1, n + 1, 2):
         print('{:^{padding}}'.format('*' * i, padding=n))
-    for i in range(n - 2, 0, -2):
+    for i in range(n - 3, 0, -2):
         print('{:^{padding}}'.format('*' * i, padding=n))
 f(100)
