@@ -25,9 +25,51 @@
 # f(7)
 #
 #
-def f(n):
-    for i in range(1, n + 1, 2):
-        print('{:^{padding}}'.format('*' * i, padding=n))
-    for i in range(n - 3, 0, -2):
-        print('{:^{padding}}'.format('*' * i, padding=n))
-f(100)
+# def f(n):
+#     for i in range(1, n + 1, 2):
+#         print('{:^{padding}}'.format('*' * i, padding=n))
+#     for i in range(n - 3, 0, -2):
+#         print('{:^{padding}}'.format('*' * i, padding=n))
+#
+# f(100)
+
+# 2020-02-14
+def diamond(n):
+    if n % 2 == 0:
+        return None
+    if n <= 0:
+        return None
+    m = n // 2
+    cnt = 1
+    for i in range(0, n, 1):
+        if i <= n//2:
+            star = i * 2 + 1
+            print((" " * m) + ("*" * star))
+            m -= 1
+            if m < 0:
+                m = 0
+        else:
+            m += 1
+            print(" " * m + "*" * (star - cnt * 2))
+            cnt += 1
+diamond(3)
+diamond(1)
+diamond(0)
+diamond(-1)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

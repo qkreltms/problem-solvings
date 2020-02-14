@@ -12,7 +12,7 @@ for _ in range(n):
 for i in range(0, limit):
     if A[i]:  # 값이 1 이상일 경우
         for j in range(A[i]):  # 해당 번지에 중복된 수 만큼 출력
-            sys.stdout.write(str(i) + "\n")
+            sys.stdout.write(str(i) + "\n")g
 
 # import sys
 # f = open(0)
