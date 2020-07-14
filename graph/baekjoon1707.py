@@ -2,7 +2,7 @@
 # 첫째 줄 테스트 케이스 개수
 # 둘째 줄 그래프의 정점의 개수, 간선의 개수
 import sys
-
+sys.setrecursionlimit(999999)
 def DFS(v, c):
   visited[v] = c
   for next in adj[v]:
