@@ -7,12 +7,7 @@ def DFS(v, c):
   visited[v] = c
   for next in adj[v]:
     if visited[next] == 0:
-      if DFS(next, 3 - c) == False:
-        # 다음 노드가 현재와 색이 같다면 종료시킨다.
-        return False
-
-    elif visited[next] == visited[v]:
-      return False
+      DFS(next, 3 - c)
   # 1 - 2, 1 - 3과 같은 구조일 때 1 -> 2, 2 -> 1 갈 때 방문한 노드지만 색이 같지 
   # 않으므로 True 반환 그렇게 해서 계속 for문 타서 1 -> 3도 갈 수 있도록 함
   return True
