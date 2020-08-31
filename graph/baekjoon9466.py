@@ -8,7 +8,7 @@
 # 3. 세번째 생각
 # 유방향, 재방문허용, n번까지 루프, 자기자신 발견시 사이클, 사이클 발견시 해당 노드 특정 사인 부여 후 나중에 그 사인 카운트
 # 4. 네번째 생각
-# 답은 맞게 나오지만 시간, 메모리 초과가 나온다 => 재귀라서 그렇지 않을까?
+# 답은 맞게 나오지만 시간, 메모리 초과가 나온다 => 재귀라서 그렇지 않을까?, => deep copy => 재방문 비허용 방법으로
 
 import copy
 import sys
@@ -20,28 +20,33 @@ def node(L):
         res[i + 1].append(n)
     return res
 
-def f(root, C, V):
-    c = C.pop()
-    if c == root:
-        V[root] = 2
-        return
-    if c in track:
-        V[c] = 2
-        return
-    
-    track.append(c)
-    f(root, copy.deepcopy(N[c]), V)
+def f(root, V):
+    C = N[root]
+    while C:
+        c = C.pop()
+        if c == root:
+            # root가 cycle이면 거쳐간 node도 사이클에 속해있으므로 모두 2를 준다.
+            V[root] = 2
+            for t in track:
+                V[t] = 2
+            return
+        if c in track:
+            V[c] = 2
+            return
+        
+        track.append(c)
+        C = N[c]
 
 T = int(sys.stdin.readline())
 for _ in range(T):
     L = int(sys.stdin.readline()) + 1
     N = node(L)
     V = [0] * L
-    track = [0] * L
+    track = []
 
     for n in range(1, L):
         track = []
-        f(n, copy.deepcopy(N[n]), V)
+        f(n, V)
 
     res = L - 1
     for i in V:
