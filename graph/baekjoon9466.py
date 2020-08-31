@@ -9,10 +9,13 @@
 # 유방향, 재방문허용, n번까지 루프, 자기자신 발견시 사이클, 사이클 발견시 해당 노드 특정 사인 부여 후 나중에 그 사인 카운트
 # 4. 네번째 생각
 # 답은 맞게 나오지만 시간, 메모리 초과가 나온다 => 재귀라서 그렇지 않을까?, => deep copy => 재방문 비허용 방법으로
-
+# 5. 답이 틀리게 나온다 왜?? => 중간지점에 cycle이 있는데 그 cycle이 2개 이상의 노드일 때 반례가있음
+# 반례
+# 1
+# 9
+# 8 3 4 5 6 7 4 1 3
 import copy
 import sys
-sys.setrecursionlimit(999999)
 
 def node(L):
     res = [[] for i in range(L)]
@@ -31,7 +34,12 @@ def f(root, V):
                 V[t] = 2
             return
         if c in track:
-            V[c] = 2
+            flag = False
+            for _ in track:
+                if _ == c:
+                    flag = True
+                if flag:
+                    V[_] = 2 
             return
         
         track.append(c)
