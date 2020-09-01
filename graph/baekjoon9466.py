@@ -14,50 +14,40 @@
 # 1
 # 9
 # 8 3 4 5 6 7 4 1 3
-import copy
+# 6. 속도를 줄이자 => node 생성 1차원 배열로 가능함
 import sys
 
 def node(L):
-    res = [[] for i in range(L)]
-    for i, n in enumerate(map(int, sys.stdin.readline().split(" "))):
-        res[i + 1].append(n)
-    return res
+    N = [[] for i in range(L)]
+    i = 0
+    for n in map(int, sys.stdin.readline().split(" ")):
+        i+=1
+        N[i].append(n)
+    return N
 
-def f(root, V):
-    C = N[root]
+def f(root, C):
+    global ans
+    V[root] = True
+    track.append(root)
     while C:
         c = C.pop()
-        if c == root:
-            # root가 cycle이면 거쳐간 node도 사이클에 속해있으므로 모두 2를 준다.
-            V[root] = 2
-            for t in track:
-                V[t] = 2
-            return
         if c in track:
-            flag = False
-            for _ in track:
-                if _ == c:
-                    flag = True
-                if flag:
-                    V[_] = 2 
-            return
-        
+            ans += track[track.index(c):]
         track.append(c)
+        V[c] = True
         C = N[c]
 
 T = int(sys.stdin.readline())
 for _ in range(T):
     L = int(sys.stdin.readline()) + 1
     N = node(L)
-    V = [0] * L
+    global V 
+    V = [False] * L
+    ans = []
     track = []
 
-    for n in range(1, L):
-        track = []
-        f(n, V)
-
-    res = L - 1
-    for i in V:
-        if i == 2:
-            res -= 1
-    print(res)
+    for i in range(1, L):
+        if not V[i]:
+            track = []
+            f(i, N[i])
+    print(L - 1 - len(ans))
