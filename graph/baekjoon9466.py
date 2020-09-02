@@ -18,24 +18,23 @@
 import sys
 
 def node(L):
-    N = [[] for i in range(L)]
+    N = [0] * L
     i = 0
     for n in map(int, sys.stdin.readline().split(" ")):
         i+=1
-        N[i].append(n)
+        N[i] = n
     return N
 
-def f(root, C):
+def f(c):
     global ans
-    V[root] = True
-    track.append(root)
-    while C:
-        c = C.pop()
-        if c in track:
-            ans += track[track.index(c):]
+    while True:
+        if V[c]:
+            if c in track:
+                ans += track[track.index(c):]
+            break
         track.append(c)
         V[c] = True
-        C = N[c]
+        c = N[c]
 
 T = int(sys.stdin.readline())
 for _ in range(T):
@@ -48,6 +47,7 @@ for _ in range(T):
 
     for i in range(1, L):
         if not V[i]:
-            track = []
-            f(i, N[i])
+            track = [i]
+            V[i] = True
+            f(N[i])
     print(L - 1 - len(ans))
