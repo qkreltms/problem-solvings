@@ -20,6 +20,7 @@
 
 # 이 값으로 n * n 행열을 만든다.
 import sys
+import uuid
 sys.setrecursionlimit(999999)
 
 danjisu = int(input())
@@ -55,7 +56,7 @@ for i in range(danjisu):
     f(i, j)
     # 순회 알고리즘이 종료되면 결과를 기록한다. 
     if cnt != 0:
-      res[j] = cnt
+      res[uuid.uuid4()] = cnt
 
 for i in sorted(list(res.values())):
   print(i)  
