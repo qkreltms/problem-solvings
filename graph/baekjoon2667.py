@@ -53,7 +53,7 @@ for i in range(danjisu):
 for i in range(danjisu):
   for j in range(danjisu):
     cnt = 0
-    f(i, j, nodes[i][j])
+    f(i, j)
     # 순회 알고리즘이 종료되면 결과를 기록한다. 
     if cnt != 0:
       res[j] = cnt
