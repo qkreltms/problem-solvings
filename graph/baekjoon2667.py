@@ -29,9 +29,10 @@ res = dict()
 cnt = 0
 
 # 순회 알고리즘
-def f(y, x, node):
+def f(y, x):
   # 정해진 배열 범위 안인지 확인
   if x >= 0 and y >= 0 and x < danjisu and y < danjisu:
+    node = nodes[y][x]
     if visited[y][x] or node == '0':
       return
     visited[y][x] = True
@@ -40,10 +41,10 @@ def f(y, x, node):
     # 4 방향 탐색
     # 위, 오른쪽, 아래, 왼쪽
     # TODO: 배열에 들어가기전 정해진 범위 안인지 확인해야한다.
-    f(y - 1, x, nodes[y - 1][x])
-    f(y, x + 1, nodes[y][x + 1])
-    f(y + 1, x, nodes[y + 1][x])
-    f(y, x - 1, nodes[y][x - 1])
+    f(y - 1, x)
+    f(y, x + 1)
+    f(y + 1, x)
+    f(y, x - 1)
       
 
 for i in range(danjisu):
