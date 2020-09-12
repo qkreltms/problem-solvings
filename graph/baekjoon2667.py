@@ -18,11 +18,12 @@
 # 1. 탐색을 시작한다.
 # 1. 탐색이 다 끝나면 object를 key 개수만큼 순회하며 정렬하고 출력한다.
 
-# 이 값으로 n * n 행열을 만든다.
+# 결과값을 저장하는 dict에 uuid4를 사용했는데 키 값 중복이 발생했다...
+# 62% 쯤에서 틀렸습니다... 왜??
 import sys
-import uuid
 sys.setrecursionlimit(999999)
 
+# 이 값으로 n * n 행열을 만든다.
 danjisu = int(input())
 nodes = ['0'] * danjisu
 visited = [[False for i in range(danjisu)] for i in range(danjisu)]
@@ -56,9 +57,11 @@ for i in range(danjisu):
     f(i, j)
     # 순회 알고리즘이 종료되면 결과를 기록한다. 
     if cnt != 0:
-      res[uuid.uuid4()] = cnt
+      res[str(j)+str(i)] = cnt
 
-for i in sorted(list(res.values())):
+arr = list(res.values())
+print(len(arr))
+for i in sorted(arr):
   print(i)  
 
 
