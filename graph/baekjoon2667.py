@@ -19,7 +19,7 @@
 # 1. 탐색이 다 끝나면 object를 key 개수만큼 순회하며 정렬하고 출력한다.
 
 # 결과값을 저장하는 dict에 uuid4를 사용했는데 키 값 중복이 발생했다...
-# 62% 쯤에서 틀렸습니다... 왜??
+# 62% 쯤에서 틀렸습니다... 왜?? => res에 사용되는 키 값이 역시 중복됨... j, i 값을 사용하는데 어떻게 중복되지..???
 import sys
 sys.setrecursionlimit(999999)
 
@@ -51,13 +51,15 @@ def f(y, x):
 for i in range(danjisu):
   nodes[i] = list(input())
 
+idxCnt = 0
 for i in range(danjisu):
   for j in range(danjisu):
     cnt = 0
     f(i, j)
     # 순회 알고리즘이 종료되면 결과를 기록한다. 
     if cnt != 0:
-      res[str(j)+str(i)] = cnt
+      idxCnt += 1
+      res[idxCnt] = cnt
 
 arr = list(res.values())
 print(len(arr))
