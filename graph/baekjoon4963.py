@@ -1,4 +1,6 @@
 # 섬 개수 구하기 2667 번 + 대각선 서치까지 구현
+import sys
+sys.setrecursionlimit(999999)
 
 while True:
   w, h = map(int, input().split(' '))
@@ -13,7 +15,7 @@ while True:
 
   def f(y, x):
     # 범위 확인
-    if (x >= 0 and y >= 0 and x < w and y < h):
+    if x >= 0 and y >= 0 and x < w and y < h:
       node = nodes[y][x]
       # visited 확인
       if visited[y][x] or node == '0':
