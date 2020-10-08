@@ -1,7 +1,7 @@
 # 미로탐색 
 # BFS를 사용하고, 거리를 카운트해야한다.
 # 4방향 순회시 queue에 넣는다.
-
+# 알고리즘 메모리: 31824KB , 속도: 112ms
 import collections
 
 h, w = map(int, input().split(' '))
