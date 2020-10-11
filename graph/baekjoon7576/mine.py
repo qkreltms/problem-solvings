@@ -19,30 +19,41 @@ def getStartPoints():
     startPoints = []
     for i in range(h):
         for j in range(w):
-            if nodes[i][j] == 1:
+            if nodes[i][j] == '1':
                 startPoints.append([i,j,-1])
     return startPoints
 
 def f():
     q = [*getStartPoints()]
     while q:
-        y, x, v = q[0][0]
+        y, x, v = q[0]
+        del q[0]
         # 범위 벋어나는지 확인
-        if y >= 0 and x >=0 and y < h and x < w:
-            node = nodes[y][x]
+        if y >= 0 and x >= 0 and y < h and x < w:
+            node = nodes[y][x] 
+            if node == '-1':
+                visited[y][x] = -2
             if visited[y][x] == -1 and node != '-1':
                 visited[y][x] = v + 1
                 q.append([y-1,x, visited[y][x]])
                 q.append([y,x+1, visited[y][x]])
                 q.append([y+1,x, visited[y][x]])
                 q.append([y,x-1, visited[y][x]])
-        del q[0]
 
 f()
 # find max
 max = 0
+flag = False
 for i in range(h):
     for j in range(w):
+        if visited[i][j] == -1:
+            flag = True
+            break
         if max < visited[i][j]:
             max = visited[i][j]
-print(max)
+if flag == False:
+    print(max)
+else:
+    print(-1)
+
+print(visited)
