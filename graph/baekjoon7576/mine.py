@@ -8,3 +8,41 @@
 # 1. 지도가 들어있는 값 순회 해서 1값을 찾고 찾은 값을 시작때 큐에 넣는다.
 # 2. visited에 -1, 못 간 구역 표시가 필요하다.
 # 3. 결과 값은 값 순회 한 후 최대거리 값을 출력한다. 또는 길찾기 알고리즘 실행시 판별해서 구함 
+
+w, h = map(int, input().split())
+nodes = [0 for _ in range(h)]
+for i in range(h):
+    nodes[i] = input().split()
+visited = [[-1 for _ in range(w)] for _ in range(h)]
+
+def getStartPoints():
+    startPoints = []
+    for i in range(h):
+        for j in range(w):
+            if nodes[i][j] == 1:
+                startPoints.append([i,j,-1])
+    return startPoints
+
+def f():
+    q = [*getStartPoints()]
+    while q:
+        y, x, v = q[0][0]
+        # 범위 벋어나는지 확인
+        if y >= 0 and x >=0 and y < h and x < w:
+            node = nodes[y][x]
+            if visited[y][x] == -1 and node != '-1':
+                visited[y][x] = v + 1
+                q.append([y-1,x, visited[y][x]])
+                q.append([y,x+1, visited[y][x]])
+                q.append([y+1,x, visited[y][x]])
+                q.append([y,x-1, visited[y][x]])
+        del q[0]
+
+f()
+# find max
+max = 0
+for i in range(h):
+    for j in range(w):
+        if max < visited[i][j]:
+            max = visited[i][j]
+print(max)
