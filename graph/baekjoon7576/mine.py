@@ -21,6 +21,8 @@ def getStartPoints():
         for j in range(w):
             if nodes[i][j] == '1':
                 startPoints.append([i,j,-1])
+            elif nodes[i][j] == '-1':
+                visited[i][j] = -2
     return startPoints
 
 def f():
@@ -31,8 +33,6 @@ def f():
         # 범위 벋어나는지 확인
         if y >= 0 and x >= 0 and y < h and x < w:
             node = nodes[y][x] 
-            if node == '-1':
-                visited[y][x] = -2
             if visited[y][x] == -1 and node != '-1':
                 visited[y][x] = v + 1
                 q.append([y-1,x, visited[y][x]])
@@ -56,4 +56,3 @@ if flag == False:
 else:
     print(-1)
 
-print(visited)
