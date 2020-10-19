@@ -10,6 +10,7 @@
 # 2. visited에 -1, 못 간 구역 표시가 필요하다.
 # 3. 결과 값은 값 순회 한 후 최대거리 값을 출력한다. 또는 길찾기 알고리즘 실행시 판별해서 구함 
 import sys
+from collections import deque
 sys.setrecursionlimit(999999)
 
 w, h = map(int, sys.stdin.readline().split())
@@ -19,28 +20,17 @@ for i in range(h):
 visited = [[-1 for _ in range(w)] for _ in range(h)]
 # 갈수있는 거리의 길이만 저장할 변수
 maxFootprints = w * h
-
-def getStartPoints():
-    global maxFootprints
-    startPoints = []
-    for i in range(h):
-        for j in range(w):
-            if nodes[i][j] == '1':
-                startPoints.append([i,j,-1])
-            # 못 가는곳은 길이 제외한다.
-            if nodes[i][j] == '-1':
-                maxFootprints -= 1
-    return startPoints
+startPoints = []
 
 def f():
     global footPrints
     global maxVisited
+    global startPoints
     footPrints = 0
     maxVisited = 0
-    q = [*getStartPoints()]
+    q = deque([*startPoints])
     while q:
-        y, x, v = q[0]
-        del q[0]
+        y, x, v = q.popleft()
         # 범위 벋어나는지 확인
         if y >= 0 and x >= 0 and y < h and x < w:
             node = nodes[y][x] 
@@ -54,12 +44,27 @@ def f():
                 q.append([y+1,x, visited[y][x]])
                 q.append([y,x-1, visited[y][x]])
 
-f()
-# 갈수있는 총 0의 개수보다 적개 순회했다? => 못 간 0이 있다. => -1
-if footPrints != maxFootprints:
-    print(-1)
-else :
-    print(maxVisited)
+cnt = 0
+startPoints = []
+for i in range(h):
+    for j in range(w):
+        if nodes[i][j] == '1':
+            startPoints.append([i,j,-1])
+        # 못 가는곳은 길이에서 제외한다.
+        elif nodes[i][j] == '-1':
+            maxFootprints -= 1
+        elif nodes[i][j] == '0':
+            cnt += 1
+# 익지 않은 토마토가 하나라도 있는지 확인
+if cnt <= 0:
+    print(0)
+else:
+    f()
+    # 갈수있는 총 0의 개수보다 적개 순회했다? => 못 간 0이 있다. => -1
+    if footPrints != maxFootprints:
+        print(-1)
+    else :
+        print(maxVisited)
 
 
 
