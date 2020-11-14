@@ -4,11 +4,8 @@ from collections import Counter
 test = [['yellow_hat', 'face'], ['blue_sunglasses', 'face'], ['green_turban', 'face'], ['green_turban', 'face2']]
 
 def solution(clothes):
-  classifiedClothes = []
-  for [_, sort] in clothes:
-    classifiedClothes.append(sort)
   # 종류별로 개수를 정한다.
-  dic = Counter(classifiedClothes)
+  dic = Counter(map(lambda x: x[1], clothes))
 
   ans = 1
   #같은 종류의 옷은 조합에 포함되지 않기 때문에 다른 종류의 아이템을 곱한다, 단 없을 경우 아이템 + 1
