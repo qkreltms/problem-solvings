@@ -1,6 +1,26 @@
-# HACK!!! python sort 알고리즘은 중복을 허용하지 않는다.
-# 장르 총합 젤 큰 순으로...
-      
+#문제
+'''
+장르 별로 가장 많이 재생된 노래를 두 개씩 모아 고유값(index)을 출력
+1. 가장 많이 재생된 노래의 장르순으로 고른다.
+2. 그 장르내에서 가장 많이 재생된 노래 순으로 고른다.
+3. 장그 내에서 재생 횟수가 같은 노래가 있다면 고유 번호 낮은 순으로
+4. 노래가 한곡 뿐이라면 그것만 출력한다.
+* 모든 장르는 재생된 횟수가 다르다 => python 정렬 함수 허용
+'''
+#내 실수
+'''
+문제를 제대로 읽지 않았다. : "속한 노래가 많이 재생된 '장르'를 먼저 수록합니다."
+'''
+#키 포인트
+'''
+key=lambda x: x[1]
+'''
+#알게된 것
+'''
+python 정렬 함수는 중복을 허용하지 않는다.
+js는 허용
+'''
+
 from collections import Counter
 
 def solution(genres, plays):
@@ -11,11 +31,14 @@ def solution(genres, plays):
   for i in Counter(genres).keys():
     dic[i] = 0
   for i in range(len(plays)):
+  # 장르별 카운트
     dic[genres[i]] += plays[i]
+  # 모든 장르는 재생된 횟수가 다르다 => sort가능
   sortedByPlaysGenres = sorted(dic.items(), key=lambda x: x[1], reverse=True)
   for (pivot,_) in sortedByPlaysGenres:
     max = 0
     genreAns = [-1, -1]
+    # 합이 가장 큰 장르 순으로 그 중 가장 큰 수를 고른다.
     for i in range(len(plays)):
       if genres[i] == pivot:
         if plays[i] > max:
@@ -24,7 +47,7 @@ def solution(genres, plays):
 
     visited[genreAns[0]] = True
     max = 0
-
+    # 두번째 큰 수를 고른다.
     for i in range(len(plays)):
       if genres[i] == pivot:
         if visited[i] != True:
