@@ -16,13 +16,41 @@ F + (두 번째로 맵지 않은 음식 지수 * 2)로
 '''
 #키 포인트
 '''
-힙을 사용해 성능을 낮춰야한다.
+힙을 사용해 성능을 낮춰야한다. => log n
 
 scov 배열 길이가 1개일 때도 확인 해야 한다.
 '''
-def solution(scov, k):
+# def solution(scov, k):
+#   cnt = 0
+#   while scov:
+#     flag = True
+#     for i in scov:
+#       if i < k:
+#         flag = False
+#         break
+#     if flag:
+#       return cnt
+#     if len(scov) < 2:
+#       if scov[0] < k:
+#         return -1
+#       return cnt
+#     a = min(scov)
+#     scov.remove(a)
+#     b = min(scov)
+#     scov.remove(b)
+#     c = a + b * 2
+#     cnt += 1
+#     scov.append(c)
+  
+#   return -1
+
+
+  def solution(scov, k):
+  # scov를 최소 heap으로 만든다.
   cnt = 0
   while scov:
+
+    # 힙에서는 루트 노드만 비교하면 됨(가장 작으므로)
     flag = True
     for i in scov:
       if i < k:
@@ -30,16 +58,21 @@ def solution(scov, k):
         break
     if flag:
       return cnt
+
     if len(scov) < 2:
       if scov[0] < k:
         return -1
       return cnt
+
+    # 최소힙 삭제 후 정렬
     a = min(scov)
     scov.remove(a)
+    # 최소힙 삭제 후 정렬
     b = min(scov)
     scov.remove(b)
     c = a + b * 2
     cnt += 1
+    # 최소힙 추가 후 정렬
     scov.append(c)
   
   return -1
