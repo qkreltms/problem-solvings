@@ -20,6 +20,8 @@
 자식 노드와 비교하며 졍렬
 '''
 
+# TODO: 힙 알고리즘 틀린 듯함 관련 문제 풀어보기
+
 
 class MinHeap:
     heap = [None]
@@ -28,6 +30,9 @@ class MinHeap:
         # src는 숫자 배열이라고 가정한다.
         self.heap = [None]
         self.init(src)
+
+    def __len__(self):
+        return len(self.heap[1:])
 
     def init(self, src):
         for i in range(len(src)):
@@ -63,10 +68,11 @@ class MinHeap:
 
     def delete(self):
         if len(self.heap) < 2:
-            return
+            return None
+        oldRoot = self.heap[1]
         if len(self.heap) == 2:
             del self.heap[1]
-            return
+            return oldRoot
         newRoot = self.heap.pop()
         self.heap[1] = newRoot
 
@@ -75,23 +81,35 @@ class MinHeap:
         while len(self.heap)-1 >= pi*2:
             lc = pi*2
             rc = lc + 1
-            if self.heap[lc] < newRoot:
+            flag = 'l'
+            lcv = self.heap[lc]
+            if len(self.heap)-1 >= rc:
+                rcv = self.heap[rc]
+                if lcv > rcv:
+                    flag = 'r'
+
+            # 노드중 가장 작은 값과 바꿔준다.
+            if flag == 'l' and self.heap[lc] < newRoot:
                 temp = self.heap[lc]
                 self.heap[lc] = newRoot
                 self.heap[pi] = temp
                 pi *= 2
                 continue
             # 오른쪽 노드가 있는지 확인 후 비교
-            elif len(self.heap)-1 >= rc and self.heap[rc] < newRoot:
+            elif flag == 'r' and self.heap[rc] < newRoot:
                 temp = self.heap[rc]
                 self.heap[rc] = newRoot
                 self.heap[pi] = temp
                 pi *= 2 + 1
                 continue
-            return
+            return oldRoot
+        return oldRoot
 
     def getHeap(self):
         return self.heap[1:]
+
+    def getRoot(self):
+        return self.heap[1]
 
 
 # test
