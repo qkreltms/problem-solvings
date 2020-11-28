@@ -1,28 +1,20 @@
-# 힙 (우선순위 큐에 사용)
+#문제
 '''
-참고: https://gmlwjd9405.github.io/2018/05/10/data-structure-heap.html
-
-1. 정의
-완전 이진 트리(부모 1개에 자녀 2개, 노드는 왼쪽부터 채워짐)
-최대 힙(부모 노드가 자식보다 큼), 최소 힙이 있음(낮음)
-배열로 구현
-부모, 자식 관계 =>
-왼쪽 자식 = (부모의 인덱스 * 2)
-오른쪽 자식 = (부모의 인덱스 * 2 + 1)
-부모 = (자식의 인덱스) / 2
-
-2. 삽입
-배열의 가장 마지막에 넣음
-그 후 부모 노드와 비교하며 정렬
-3. 삭제
-배열의 0번째 루트 노드 삭제
-힙의 마지막 노드를 가져와 루트로 놓는다.
-자식 노드와 비교하며 졍렬
+최대 힙 구현
+입력:
+첫 줄 = 연산의 개수 => k
+두번째 줄 ~ k
+0일 경우 루트 출력
+n일 경우 값을 최대 힙에 넣음
+'''
+#내 실수
+'''
+1. 삭제시 자녀 둘 다 비교후 가장 작은/큰 값과 바꿔야 함
+2. 삭제시 비교하는 부모 값이 newRoot로 고정적이었음...
 '''
 
-# TODO: 힙 알고리즘 틀린 듯함 관련 문제 풀어보기
-
-class MinHeap:
+import sys
+class MaxHeap:
     heap = [None]
 
     def __init__(self, src):
@@ -41,7 +33,7 @@ class MinHeap:
             pi = (i+1) // 2
             ci = i+1
             while pi:
-                if self.heap[pi] > self.heap[ci]:
+                if self.heap[pi] < self.heap[ci]:
                     temp = self.heap[pi]
                     self.heap[pi] = self.heap[ci]
                     self.heap[ci] = temp
@@ -50,13 +42,13 @@ class MinHeap:
                 else:
                     break
 
-    def push(self, n):
+    def add(self, n):
         self.heap.append(n)
         if len(self.heap) > 1:
             pi = (len(self.heap)-1) // 2
             ci = (len(self.heap)-1)
             while pi:
-                if self.heap[pi] > self.heap[ci]:
+                if self.heap[pi] < n:
                     temp = self.heap[pi]
                     self.heap[pi] = self.heap[ci]
                     self.heap[ci] = temp
@@ -65,7 +57,7 @@ class MinHeap:
                 else:
                     break
 
-    def pop(self):
+    def delete(self):
         # 빈 힙일 경우
         if len(self.heap) < 2:
             return 0
@@ -85,12 +77,12 @@ class MinHeap:
             lcv = self.heap[lc]
             if len(self.heap)-1 >= rc:
                 rcv = self.heap[rc]
-                if rcv < lcv :
+                if rcv > lcv :
                     flag = 'r'
 
             # 노드중 가장 작은 값과 바꿔준다.
             # 아래로 내려간다.
-            if flag == 'l' and self.heap[lc] < self.heap[pi]:
+            if flag == 'l' and self.heap[lc] > self.heap[pi]:
                 # 왼쪽 노드가 부모 위치로
                 temp = self.heap[lc]
                 self.heap[lc] = self.heap[pi]
@@ -98,7 +90,7 @@ class MinHeap:
                 pi = lc
                 continue
             # 오른쪽 노드가 있는지 확인 후 비교
-            elif flag == 'r' and self.heap[rc] < self.heap[pi]:
+            elif flag == 'r' and self.heap[rc] > self.heap[pi]:
                 temp = self.heap[rc]
                 self.heap[rc] = self.heap[pi]
                 self.heap[pi] = temp
@@ -114,36 +106,12 @@ class MinHeap:
         return self.heap[1]
 
 
-# test
-heap = MinHeap([])
-heap.pop()
-print(heap.getHeap() == [])
-heap = MinHeap([1])
-heap.pop()
-print(heap.getHeap() == [])
-heap = MinHeap([1, 2])
-heap.pop()
-print(heap.getHeap() == [2])
-heap = MinHeap([1, 2, 5, 3, 9, 8, 6, 9, 7])
-print(heap.getHeap() == [1, 2, 5, 3, 9, 8, 6, 9, 7])
-heap = MinHeap([1, 2, 5, 3, 9, 8, 6, 9, 7])
-heap.pop()
-print(heap.getHeap() == [2, 3, 5, 7, 9, 8, 6, 9])
-heap = MinHeap([1, 2, 5, 3, 9, 8, 6, 9, 7])
-heap.pop()
-heap.pop()
-print(heap.getHeap() == [3, 7, 5, 9, 9, 8, 6])
-heap = MinHeap([9, 8, 7, 6])
-print(heap.getHeap() == [6, 7, 8, 9])
+k = int(sys.stdin.readline())
+heap = MaxHeap([])
+for _ in range(k):
+    n = int(sys.stdin.readline())
+    if n > 0:
+        heap.add(n)
+    if n == 0:
+        print(heap.delete())
 
-heap = MinHeap([1, 2, 3, 4, 5])
-heap.push(0)
-print(heap.getHeap() == [0, 2, 1, 4, 5, 3])
-
-heap = MinHeap([1,2,3,5,4])
-heap.pop()
-heap.pop()
-heap.pop()
-heap.pop()
-heap.pop()
-print(heap.getHeap())
