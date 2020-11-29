@@ -3,7 +3,7 @@
 return 모든 트럭이 순차적으로 다리를 건너려면 최소 몇 초가 걸리는가?
 다리에 무게 제한이 있다.
 다리위에 무게가 되는한 트럭을 최대한 올려놓는다.
-트럭은 1초에 1만큼 움직인다.=> 다리는 특정 시간이 지나면 트럭이가 비워져야한다
+트럭은 1초에 1만큼 움직인다.=> 다리는 특정 시간이 지나면 트럭이 비워져야한다
 트럭은 중간중간에 비지않는다.
 '''
 # 내 실수:
@@ -26,16 +26,22 @@ return 모든 트럭이 순차적으로 다리를 건너려면 최소 몇 초가
 그러지말고 변화가 있을 때만 sum을 해주면 속도가 빨라진다. 
 '''
 from collections import deque 
+# BL => 다리의 길이
+# BW => 다리 제한 하중
 def solution(BL, BW, TWs):
+    # 다리를 건너길 기다리는 트럭
     WTs = deque(TWs)
+    # 다리위의 트럭 열
     WLs = deque()
     time = 0
     sumOfWLs = 0
     while WTs or WLs:
+      # 시간이 다리의 길이에 도달하면 왼쪽부터 자른다.
       if time >= BL:
         sumOfWLs -= WLs.popleft()
       if len(WTs) > 0:
         wt = WTs[0]
+        # 트럭이 다리에 들어올 수 있는지 확인
         if sumOfWLs + wt <= BW and len(WLs) <= BL:
           WLs.append(wt)
           WTs.popleft()
