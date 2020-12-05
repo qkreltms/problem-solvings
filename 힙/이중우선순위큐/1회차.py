@@ -30,9 +30,19 @@ visited = []
 
 3트
 왜 힙을 써야되지???
+명령어가 한번에 들어오니까, 다 받아서 다듬은 뒤,
 그냥 정렬된 배열 하나 두고 앞, 뒤 가리키는 포인터 두고 자르면 되는거 아닌가?
+=> 삭제 명령어가 사이사이마다 들어오는데, 3트 방법 대로면 좀 까다로워짐
+
+4트 2트 방법 수정
+
 '''
 import heapq
 def solution(ops):
-    myAry = []
     heap = []
+    tail = 0
+    head = 0
+    for op in ops:
+        op = op.split()
+        if op[i] == "I":
+        if op[i] == "D":
