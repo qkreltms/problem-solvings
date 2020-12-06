@@ -10,6 +10,16 @@ D -1 => 큐에서최솟값 삭제
 단, 큐가 비어있을 때 삭제 연산 => 무시
 삭제 연산 일 때 최댓값 or 최솟값이 두개 라면 하나만 삭제.
 '''
+#키 포인트
+'''
+min max heap을 써야되고 이 두 heap을 잘 동기화 해야한다.
+여기서는 한 쪽의 값이 없어지면 다른 한 쪽도 값을 없애는 식으로 구현
+'''
+#내 실수
+'''
+어떤 풀이법을 알아냈을 때 그것을 어떻게 증명하는가?
+'''
+
 # 풀이법
 '''
 1트
@@ -68,7 +78,8 @@ def solution(ops):
             if op[2] == '-':
                 if minHeap:
                     minValue = heapq.heappop(minHeap)
-                    maxHeap.pop(maxHeap.index(-minValue))
+                    # max heap은 - 값을 곱해서 저장하므로 똑같이 해준다.
+                    maxHeap.remove(-minValue)
                     ans[1] = minValue
                 else:
                     ans[1] = 0
@@ -76,9 +87,9 @@ def solution(ops):
             # max heap 삭제
             else:
                 if maxHeap:
-                    maxValue = heapq.heappop(maxHeap)
-                    minHeap.pop(minHeap.index(-maxValue))
-                    ans[0] = -maxValue
+                    maxValue = -heapq.heappop(maxHeap)
+                    minHeap.remove((maxValue))
+                    ans[0] = maxValue
                 else:
                     ans[0] = 0
     return ans
