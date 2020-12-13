@@ -29,6 +29,7 @@ def solution(genres, plays):
             dic[g] = [(i, p)]
         else:
             dic[g].append((i, p))
+        # 장르별 재생횟수 저장
         if g not in sumDic:
             sumDic[g] = p
         else:
