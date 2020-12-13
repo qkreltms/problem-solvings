@@ -18,17 +18,18 @@ nodes = [[] for _ in range(N+1)]
 visited = [False for _ in range(N+1)]
 for _ in range(M):
   v1, v2 = map(int, sys.stdin.readline().split())
+  # 무방향 그래프
   nodes[v1].append(v2)
   nodes[v2].append(v1)
 
 def f(startNode):
   stack = [startNode]
+  # startNode와 연결된 모든 노드를 순회한다.
   while stack:
     curNode = stack.pop()
     if visited[curNode] == False:
       visited[curNode] = True
-      # 현재 노드가 가리키고있는 다른 노드를 
-      # 스택에 추가한다.
+      # 현재 노드의 인접 노드를 스택에 추가한다.
       stack += nodes[curNode]
 
 ans = 0
