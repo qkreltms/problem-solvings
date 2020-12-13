@@ -53,8 +53,10 @@ def f(v):
     while stack:
         s = stack.popleft()
         c = visited[s]
+        # s 노드의 인접노드를 순회한다.
         for a in adj[s]:
             if visited[a] != 0:
+              #  s노드와 그 인접노드의 색이 같다면 이분 그래프가 아니다.
               if visited[a] == visited[s]:
                   return True
             if visited[a] == 0:
