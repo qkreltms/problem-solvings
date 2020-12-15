@@ -34,6 +34,7 @@ def solution(numbers):
     ans = 0
     for i in allPermutations:
         n = int(''.join(map(str, i)))
+        # 2부터 가장 큰 값까지 돌면서 소수가 아닌 값 제거하면 더 빠를 듯?
         if isSosu(n):
             if n not in dic:
                 dic[n]=n
@@ -41,7 +42,7 @@ def solution(numbers):
     return ans
 
 
-# print(solution("17"), 3)
-# print(solution("011"), 2)
-# print(solution("111"), 1)
+print(solution("17"), 3)
+print(solution("011"), 2)
+print(solution("111"), 1)
 print(solution("999"), 0)
