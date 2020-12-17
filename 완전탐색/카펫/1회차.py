@@ -13,26 +13,37 @@ w:4, h4, 남지 않았다면
 결과값 리턴
 반례: 24, 24
 2#
+(약수구하기)
 x * y = z 일때 z에서 나올 수 있는 y가 가장 큰 x, y 값 출력
 , 단 x >= y
-예: z=48 일 때 (12,4), (8,6)
+예: z=48 일 때 (12,4), (8,6) 
 
-=> 에러 => 그냥 다 돌고, 갭이 젤 작은거 출력하면 되지 않을까?
+=> 반례 존재
+세로 길이와 같거나, 세로 길이보다긴 카펫이 여러개인데
+이 때 어떤 값을 반환해야하는가?
 '''
 
 
+
+
+import math
 def solution(x, y):
     z, h, w = x+y, 3, 3
     xyList = []
+    root = math.ceil(z ** 0.5)
     while True:
         if z % h == 0:
             w = int(z//h)
             xyList.append((w, h))
-        if h >= z:
+        if h >= root:
             break
         h += 1
     # 갭이 젤 작은 값을 출력한다.
-    ans = xyList[len(xyList)-1]
+
+    ans = xyList[0]
+    print(xyList)
+    if ans[0] > ans[1]:
+        return [ans[0], ans[1]]
     return [ans[1], ans[0]]
 
 
@@ -40,4 +51,6 @@ print(solution(10, 2), [4, 3])
 print(solution(8, 1), [3, 3])
 print(solution(24, 24), [8, 6])
 print(solution(10, 2), [4, 3])
-print(solution(10, 2), [4, 3])
+print(solution(14, 4), [6, 3])
+print(solution(50, 22), [24, 3])
+print(solution(18,12), [6,5])
