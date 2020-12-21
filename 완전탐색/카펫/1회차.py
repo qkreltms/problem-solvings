@@ -14,13 +14,18 @@ w:4, h4, 남지 않았다면
 반례: 24, 24
 2#
 (약수구하기)
-x * y = z 일때 z에서 나올 수 있는 y가 가장 큰 x, y 값 출력
+x + y = z 일때 z에서 나올 수 있는 약수 계산
 , 단 x >= y
 예: z=48 일 때 (12,4), (8,6) 
 
 => 반례 존재
 세로 길이와 같거나, 세로 길이보다긴 카펫이 여러개인데
 이 때 어떤 값을 반환해야하는가?
+
+
+3#
+수학문제
+
 '''
 
 
@@ -38,13 +43,10 @@ def solution(x, y):
         if h >= root:
             break
         h += 1
-    # 갭이 젤 작은 값을 출력한다.
 
-    ans = xyList[0]
-    print(xyList)
-    if ans[0] > ans[1]:
-        return [ans[0], ans[1]]
-    return [ans[1], ans[0]]
+    for w, h in xyList:
+        if ((w-2)*(h-2)) == y:
+            return [w, h] 
 
 
 print(solution(10, 2), [4, 3])
