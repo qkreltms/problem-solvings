@@ -9,13 +9,9 @@ return 위의 조작을 이용해 최소 조작 횟수 값
 '''
 # 키 포인트
 '''
-1. 좌우, 상하 횟수를 분리해 계산한다.
-2. 좌우 횟수 계산시 주어진 문자열에서 A무시하고 순회, A가 있을 때마다 뒤로 이동할 때의 가장 최소값을 구한다.
-오른쪽으로 쭉 이동한 값 중 작은 값을 구한다.
-▲ - 다음 알파벳
-▼ - 이전 알파벳 (A에서 아래쪽으로 이동하면 Z로)
-3. 이 부분을 dic에 키를 알파벳, 값을 횟수로 저장한다.
+1. 상하 횟수 구하는 것은 dic에 키를 알파벳, 값을 횟수로 저장한다. 값은 A에서 몇 번 위,아래 이동횟수
 
+2.
 ABBBBBAAAAAAABBBBB
 그냥 쭉 갔을 때 17
 처음 A보자마자 뒤로 갔을 때 17
@@ -45,8 +41,8 @@ def solution(name):
         next = 0
         while next+1+i < len(name) and name[next+1+i] == 'A':
             next += 1
-        cursorCnt = min(cursorCnt, i*2+l-i-next)
-    print(cursorCnt)
+        aCnt = next
+        cursorCnt = min(cursorCnt, (i*2)+(l-i)-aCnt)
     ans += cursorCnt
     return ans
 
