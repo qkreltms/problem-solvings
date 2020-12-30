@@ -24,7 +24,7 @@ return 어떤 숫자에서 k개의 수를 제거했을 때 얻을 수 있는 가
 같아지면 남은 값은 모조리 결과값에 추가한다.
 => 775841
 '''
-
+# 1트, 정답은 나오지만 시간초과
 # from itertools import combinations
 # def solution(number, k):
 #     return max(list(map(lambda x: ''.join(x), combinations(number, len(number)-k))))
