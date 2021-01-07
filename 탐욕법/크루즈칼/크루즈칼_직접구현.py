@@ -8,10 +8,7 @@ class UnionFind:
         if self.root[x] == x:
             return x
         self.root[x] = self.find(self.root[x])
-
-        # if self.root[x] != x:
-        #     self.root[x] = self.find(self.root[x])
-        # return x
+        return self.root[x]
 
     def union(self, x, y):
         if y > x:
