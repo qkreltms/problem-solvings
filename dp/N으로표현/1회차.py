@@ -29,45 +29,106 @@ number는 1 이상 32,000 이하입니다.
 왜  8번만큼만 순회하냐면 n 개수가 8개까지만 되므로 그 이후는 볼 필요없음(초과 되니까)
 
 5+(5/5)
+5/(55+5) =>
 (55+5)/5와 같은 괄호 문제는 어떻게 해결하지...?
+=> 곱하기와 나누기에서 괄호 문제가 발생한다.
+------------------------
+
+n = 5라고 할 때
+n이 한 개일때
+1) 5
+2개일 때
+2) 55, 5+5, 5-5, 5x5, 5/5
+
+3) 555
+1) + 2) 5+55, 5-55, ...
+2) + 1) 55+5, 55-5, ...
+
+4) 5555
+1) + 3) 5+555, 5-555, ...
+2) + 2) 55+55, 55-55, ...
+3) + 1) 555+5, 555-5, ...
+
+이렇게 차근차근히 한 자리씩 높여가며 number를 찾는다.
+
+구현:
+set을 8개 만들고
+5~55555555를 초기값으로 준다
+
+루프를 돌면서 위와 같은 순서로, 아래와 같이 넣는다.
+[(5), (55, 5+5, 5-5,...), ...]
+단, 첫 번째[0], 마지막 인덱스 [7]에는 아무 값도 넣지 말아야한다.
 '''
-import sys
-sys.setrecursionlimit(99999999)
-
-
-def f(result, cnt):
-    global ans
-    if result > target:
-        return
-    if result == target:
-        if ans < cnt or ans == -1:
-            ans = cnt
-            print(cnt)
-        return
-    if cnt >= 8:
-        return
-    for i in range(0, 8-cnt):
-        n = template[i]
-        cnt += 1
-        f(result+n, cnt)
-        f(result-n, cnt)
-        f(result//n, cnt)
-        f(result*n, cnt)
 
 
 def solution(N, number):
-    global ans
-    global target
-    global template
-    global n
-    n = N
-    template = list(map(int, [str(N)*1, str(N)*2, str(N)*3, str(N)*4,
-                              str(N)*5, str(N)*6, str(N)*7, str(N)*8]))
-    target = number
+    if N == number:
+        return 1
+
+    mySets = [set() for _ in range(8)]
+    for i, s in enumerate(mySets, start=1):
+        s.add(int(str(N)*i))
+
     ans = -1
-    f(0, 0)
+    for i in range(1, 8):
+        for j in range(i):
+            # 0번 째부터 7번째까지 돈다, N은 1~9
+            for a in mySets[j]:
+                for b in mySets[i-1-j]:
+                    mySets[i].add(a+b)
+                    mySets[i].add(a-b)
+                    mySets[i].add(a*b)
+                    if b != 0:
+                        mySets[i].add(a//b)
+        if number in mySets[i]:
+            ans = i+1
+            break
+
     return ans
 
 
 print(solution(5, 12), 4)
 print(solution(2, 11), 3)
+print(solution(1, 1121), 7)
+print(solution(8, 53), 5)
+
+
+# -----------예전 코드-----------
+'''
+# import sys
+# sys.setrecursionlimit(99999999)
+
+
+# def f(result, cnt):
+#     global ans
+#     if result == target:
+#         if ans > cnt or ans == -1:
+#             ans = cnt
+#             print(cnt)
+#         return
+#     if cnt > 8:
+#         return
+#     for i in range(0, 8-cnt):
+#         n = template[i]
+#         cnt += 1
+#         f(result+n, cnt)
+#         f(result-n, cnt)
+#         f(result//n, cnt)
+#         f(result*n, cnt)
+#         f(result+(n*n), cnt)
+#         f(result+(n//n), cnt)
+
+
+# def solution(N, number):
+#     global ans
+#     global target
+#     global template
+#     global n
+#     n = N
+#     template = list(map(int, [str(N)*1, str(N)*2, str(N)*3, str(N)*4,
+#                               str(N)*5, str(N)*6, str(N)*7, str(N)*8]))
+#     target = number
+#     ans = -1
+#     f(0, 0)
+#     return ans
+'''
