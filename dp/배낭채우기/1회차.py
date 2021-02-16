@@ -1,5 +1,5 @@
 # https://www.acmicpc.net/problem/12865
-# 문제
+# 문제e
 '''
 배낭 무게가 주어질 때
 가치 + 무게의 최댓값은?
