@@ -1,6 +1,6 @@
 {
   "python.formatting.provider": "autopep8",
-  "python.pythonPath": "C:\\Python38\\python.exe",
+  "python.pythonPath": "c:\\users\\happy\\appdata\\local\\programs\\python\\python37\\python.exe",
   "python.linting.pylintEnabled": true,
   "python.linting.enabled": true
 }

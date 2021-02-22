@@ -24,7 +24,6 @@ ICN의 value중 [0] 번째 값을 pop한 후 queue에 넣는다.
 queue가 빌 때까지 반복한다.
 '''
 
-
 def solution(tickets):
     table = {}
     for key, value in tickets:
@@ -37,27 +36,24 @@ def solution(tickets):
         values.sort()
 
     ans = []
-    queue = [["ICN", "ICN"]]
+    queue = [(tickets[0][0], '')]
     while queue:
         key, parent = queue.pop(0)
         ans.append(key)
         if key in table and table[key]:
-          queue.append([table[key].pop(0), key])
+            queue.append((table[key].pop(0), key))
         elif table[parent]:
-          queue.append([table[parent].pop(0), parent])
-    
-    # for i, a in enumerate(ans, start=1):
-    #   if a == "ICN" and (i)%2==0:
-    #     temp = ans[i-2]
-    #     ans[i-2] = "ICN"
-    #     ans[i-1] = temp
+          queue.append((parent, ''))
+        
 
     return ans
 
 
-print(solution([["ICN", "JFK"], ['HND', 'IAD'], ['JFK', 'HND']]), "\n['ICN', 'JFK', 'HND', 'IAD']")
-print(solution([['ICN','SFO'],['ICN','ATL'],['SFO','ATL'],['ATL','ICN'],['ATL','SFO']]), "\n['ICN', 'ATL', 'ICN', 'SFO', 'ATL', 'SFO']")
-print(solution([['ICN','SFO'],['ICN','ATL']]), "\n['ICN', 'ATL', 'SFO']")
+# print(solution([["ICN", "JFK"], ['HND', 'IAD'], ['JFK', 'HND']]), "\n['ICN', 'JFK', 'HND', 'IAD']")
+# print(solution([['ICN','SFO'],['ICN','ATL'],['SFO','ATL'],['ATL','ICN'],['ATL','SFO']]), "\n['ICN', 'ATL', 'ICN', 'SFO', 'ATL', 'SFO']")
+# print(solution([['ICN','SFO'],['ICN','ATL']]), "\n['ICN', 'ATL', 'SFO']")
 print(solution([['ICN','JFK'],['JFK','NYC'], ['JFK','CNN'], ['JFK', 'ZZZ']]), "\n['ICN', 'JFK', 'CNN', 'NYC', 'ZZZ']")
-print(solution([['ICN','A'],['ICN','B'], ['B','ICN']]), "\n['ICN', 'A', 'ICN', 'B']")
-print(solution([['ICN','A'],['ICN','A'], ['A','ICN'], ['A', 'C']]), "\n['ICN', 'A', 'ICN', 'A', 'C']")
+# print(solution([['ICN', 'A'], ['ICN', 'B'], ['ICN', 'C']]),
+#       "\n['ICN', 'A', 'ICN', 'B', 'ICN', 'C']")
+# print(solution([['ICN', 'AAA'], ['ICN', 'AAA'], ['AAA', 'ICN'],
+#                 ['AAA', 'CCC']]), "\n['ICN', 'AAA', 'ICN', 'AAA', 'CCC']")
