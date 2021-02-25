@@ -24,6 +24,10 @@ ICN의 value중 [0] 번째 값을 pop한 후 queue에 넣는다.
 queue가 빌 때까지 반복한다.
 '''
 
+
+
+
+import copy
 def solution(tickets):
     table = {}
     for key, value in tickets:
@@ -31,29 +35,65 @@ def solution(tickets):
             table[key].append(value)
         else:
             table[key] = [value]
+        table[key].sort()
 
-    for _, values in table.items():
-        values.sort()
+    copiedTable = copy.deepcopy(table)
+    for _ in range(len(table['ICN'])):
+        ans = []
+        queue = ['ICN']
+        while queue:
+            key = queue.pop(0)
+            ans.append(key)
+            if key in copiedTable and copiedTable[key]:
+                item = ''
+                if 'ICN' in copiedTable[key]:
+                    item = copiedTable[key].pop(table[key].index('ICN'))
+                else:
+                    item = copiedTable[key].pop(0)
+                queue.append(item)
+            else:
+                flag = False
+                for _, v in copiedTable.items():
+                    if v:
+                        copiedTable = copy.deepcopy(table)
+                        copiedTable['ICN'].append(copiedTable['ICN'].pop(0))
+                        flag = True
+                        break
+                if not flag:
+                    return ans
 
-    ans = []
-    queue = [(tickets[0][0], '')]
-    while queue:
-        key, parent = queue.pop(0)
-        ans.append(key)
-        if key in table and table[key]:
-            queue.append((table[key].pop(0), key))
-        elif table[parent]:
-          queue.append((parent, ''))
-        
 
-    return ans
+# print(solution([["ICN", "JFK"], ['HND', 'IAD'], ['JFK', 'HND']]),
+#       "\n['ICN', 'JFK', 'HND', 'IAD']")
+# print(solution([['ICN', 'SFO'], ['ICN', 'ATL'], ['SFO', 'ATL'], ['ATL', 'ICN'], [
+#       'ATL', 'SFO']]), "\n['ICN', 'ATL', 'ICN', 'SFO', 'ATL', 'SFO']")
+# print(solution([['ICN', 'B'], ['B', 'ICN'], ['ICN', 'A'], [
+#       'A', 'D'], ['D', 'A']]), "\n['ICN', 'B', 'ICN', 'A', 'D', 'A']")
+# print('출발지가 같으면 도착지는 알파벳순으로 방문한다.')
+# print(solution([['ICN', 'BBB'], ['AAA', 'ICN'], ['ICN', 'AAA']]),
+#       "\n['ICN', 'AAA', 'ICN', 'BBB']")
+# print(solution([['ICN', 'ABB'], ['AAA', 'ICN'], ['ICN', 'AAA'], ['ICN', 'ADD'], [
+#       'ABB', 'ICN']]), "\n['ICN', 'AAA', 'ICN', 'ABB', 'ICN', 'ADD']")
+# print('출발지와 도착지가 같은게 여러개일 경우')
+# print(solution([['ICN', 'SFO'], ['SFO', 'ICN'], ['ICN', 'SFO'],
+#                 ['SFO', 'JFK']]), "\n['ICN', 'SFO', 'ICN', 'SFO', 'JFK']")
 
+# print('ICN을 항상 먼저 방문한다.')
+# print(solution([['ICN', 'A'], ['ICN', 'A'], ['A', 'ICN'],
+#                 ['A', 'C']]), "\n['ICN', 'A', 'ICN', 'A', 'C']")
+# print(solution([['ICN', 'A'], ['A', 'ICN'], ['A', 'B'],
+#                 ['ICN', 'A']]), "\n['ICN', 'A', 'ICN', 'A', 'B']")
 
-# print(solution([["ICN", "JFK"], ['HND', 'IAD'], ['JFK', 'HND']]), "\n['ICN', 'JFK', 'HND', 'IAD']")
-# print(solution([['ICN','SFO'],['ICN','ATL'],['SFO','ATL'],['ATL','ICN'],['ATL','SFO']]), "\n['ICN', 'ATL', 'ICN', 'SFO', 'ATL', 'SFO']")
-# print(solution([['ICN','SFO'],['ICN','ATL']]), "\n['ICN', 'ATL', 'SFO']")
-print(solution([['ICN','JFK'],['JFK','NYC'], ['JFK','CNN'], ['JFK', 'ZZZ']]), "\n['ICN', 'JFK', 'CNN', 'NYC', 'ZZZ']")
-# print(solution([['ICN', 'A'], ['ICN', 'B'], ['ICN', 'C']]),
-#       "\n['ICN', 'A', 'ICN', 'B', 'ICN', 'C']")
+# print('다음 경로가 없으면 무시하고 진행한다.')
+# print(solution([['ICN', 'A'], ['ICN', 'B'], ['B', 'ICN']]),
+#       "\n['ICN', 'B', 'ICN', 'A']")
+# print(solution([['ICN', 'A'], ['A', 'C'], ['ICN', 'B'], ['B', 'ICN']]),
+#       "\n['ICN', 'B', 'ICN', 'A', 'C']")
+
 # print(solution([['ICN', 'AAA'], ['ICN', 'AAA'], ['AAA', 'ICN'],
 #                 ['AAA', 'CCC']]), "\n['ICN', 'AAA', 'ICN', 'AAA', 'CCC']")
+# print(solution([['ICN', 'AAA'], ['ICN', 'AAA'], ['ICN', 'AAA'],
+#                 ['AAA', 'ICN'], ['AAA', 'ICN']]), "\n['ICN', 'AAA', 'ICN', 'AAA', 'ICN', 'AAA']")
+
+print(solution([['ICN', 'BOO'], ['ICN', 'COO'], ['COO', 'DOO'], ['DOO', 'COO'], [
+      'BOO', 'DOO'], ['DOO', 'BOO'], ['BOO', 'ICN'], ['COO', 'BOO']]), ['ICN', 'BOO', 'DOO', 'BOO', 'ICN', 'COO', 'DOO', 'COO', 'BOO'])
