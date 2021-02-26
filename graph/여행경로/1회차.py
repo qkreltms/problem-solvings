@@ -13,6 +13,7 @@ ICN => JFK => HND => IAD
 '''
 # 풀이 법
 '''
+#1
 값이 들어오면
 이차원 배열에 key, value형식으로 저장해 놓는다. value는 누적된다.
 
@@ -22,6 +23,12 @@ queue에 ICN를 넣는다.
 ICN를 팝하고 ans에 append한다.
 ICN의 value중 [0] 번째 값을 pop한 후 queue에 넣는다.
 queue가 빌 때까지 반복한다.
+
+#2
+이 문제는 일반적인 DFS,BFS알고리즘을 사용해야 될 뿐만아니라
+백트레킹을 사용해야한다. 키워드는 "모든 도시를 방문할 수 없는 경우는 주어지지  않습니다."
+이 말은 갈수 있는 모든 경로를 찾아야 한다. 
+또한 dic으로 저장해놓는 형태보다 배열을 모두 순회하며 visited 체크를 해야한다.
 '''
 
 
@@ -69,11 +76,8 @@ def solution(tickets):
 #       'ATL', 'SFO']]), "\n['ICN', 'ATL', 'ICN', 'SFO', 'ATL', 'SFO']")
 # print(solution([['ICN', 'B'], ['B', 'ICN'], ['ICN', 'A'], [
 #       'A', 'D'], ['D', 'A']]), "\n['ICN', 'B', 'ICN', 'A', 'D', 'A']")
-# print('출발지가 같으면 도착지는 알파벳순으로 방문한다.')
-# print(solution([['ICN', 'BBB'], ['AAA', 'ICN'], ['ICN', 'AAA']]),
-#       "\n['ICN', 'AAA', 'ICN', 'BBB']")
-# print(solution([['ICN', 'ABB'], ['AAA', 'ICN'], ['ICN', 'AAA'], ['ICN', 'ADD'], [
-#       'ABB', 'ICN']]), "\n['ICN', 'AAA', 'ICN', 'ABB', 'ICN', 'ADD']")
+
+
 # print('출발지와 도착지가 같은게 여러개일 경우')
 # print(solution([['ICN', 'SFO'], ['SFO', 'ICN'], ['ICN', 'SFO'],
 #                 ['SFO', 'JFK']]), "\n['ICN', 'SFO', 'ICN', 'SFO', 'JFK']")
@@ -84,11 +88,15 @@ def solution(tickets):
 # print(solution([['ICN', 'A'], ['A', 'ICN'], ['A', 'B'],
 #                 ['ICN', 'A']]), "\n['ICN', 'A', 'ICN', 'A', 'B']")
 
-# print('다음 경로가 없으면 무시하고 진행한다.')
+# print('출발지가 항상 첫번째 인덱스는 아니다.')
 # print(solution([['ICN', 'A'], ['ICN', 'B'], ['B', 'ICN']]),
 #       "\n['ICN', 'B', 'ICN', 'A']")
 # print(solution([['ICN', 'A'], ['A', 'C'], ['ICN', 'B'], ['B', 'ICN']]),
 #       "\n['ICN', 'B', 'ICN', 'A', 'C']")
+# print(solution([['ICN', 'BBB'], ['AAA', 'ICN'], ['ICN', 'AAA']]),
+#       "\n['ICN', 'AAA', 'ICN', 'BBB']")
+# print(solution([['ICN', 'ABB'], ['AAA', 'ICN'], ['ICN', 'AAA'], ['ICN', 'ADD'], [
+#       'ABB', 'ICN']]), "\n['ICN', 'AAA', 'ICN', 'ABB', 'ICN', 'ADD']")
 
 # print(solution([['ICN', 'AAA'], ['ICN', 'AAA'], ['AAA', 'ICN'],
 #                 ['AAA', 'CCC']]), "\n['ICN', 'AAA', 'ICN', 'AAA', 'CCC']")

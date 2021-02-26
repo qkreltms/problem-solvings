@@ -30,6 +30,7 @@ def dfs(tickets, idx, visited, route, route_lst):
         return
 
     for i in range(len(tickets)):
+        # 시작[1]에 맞는 데이터를 찾는다.
         if route[len(route)-1] == tickets[i][0] and visited[i] == False:
 
             route.extend([tickets[i][1]])
@@ -38,5 +39,8 @@ def dfs(tickets, idx, visited, route, route_lst):
             route.pop()
             visited[i] = False
 
-print(solution([['ICN', 'BOO'], ['ICN', 'COO'], ['COO', 'DOO'], ['DOO', 'COO'], [
-      'BOO', 'DOO'], ['DOO', 'BOO'], ['BOO', 'ICN'], ['COO', 'BOO']]), ['ICN', 'BOO', 'DOO', 'BOO', 'ICN', 'COO', 'DOO', 'COO', 'BOO'])
+# print(solution([['ICN', 'BOO'], ['ICN', 'COO'], ['COO', 'DOO'], ['DOO', 'COO'], [
+#       'BOO', 'DOO'], ['DOO', 'BOO'], ['BOO', 'ICN'], ['COO', 'BOO']]), 
+#       "\n 답:",['ICN', 'BOO', 'DOO', 'BOO', 'ICN', 'COO', 'DOO', 'COO', 'BOO'])
+print(solution([['ICN', 'SFO'], ['ICN', 'ATL'], ['SFO', 'ATL'], ['ATL', 'ICN'], [
+      'ATL', 'SFO']]), "\n['ICN', 'ATL', 'ICN', 'SFO', 'ATL', 'SFO']")
