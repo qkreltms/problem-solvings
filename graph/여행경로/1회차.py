@@ -35,73 +35,60 @@ queue가 빌 때까지 반복한다.
 
 
 import copy
+def dfs(ticket, paths, tickets):
+    global ans, visited
+    # 주어진 경로를 다 순회했다.
+    if len(paths) == len(tickets):
+        # 마지막 값은 더 이상 순회할 수 없으므로 바로 넣어준다.
+        ans.append(copy.deepcopy([*paths, ticket]))
+        return
+
+    for j in range(0, len(tickets)):
+        # 주어진 키 값이 일치하면 갈 경로를 찾았다.
+        if tickets[j][0] == ticket and visited[j] == False:
+            # 키 값을 갈 경로에 추가한다.
+            visited[j] = True
+            paths.append(ticket)
+            dfs(tickets[j][1], paths, tickets)
+            # 백트레킹
+            visited[j] = False
+            paths.pop()
+
+
 def solution(tickets):
-    table = {}
-    for key, value in tickets:
-        if key in table:
-            table[key].append(value)
-        else:
-            table[key] = [value]
-        table[key].sort()
+    global visited, ans
+    ans = []
+    visited = [False for _ in range(len(tickets))]
 
-    copiedTable = copy.deepcopy(table)
-    for _ in range(len(table['ICN'])):
-        ans = []
-        queue = ['ICN']
-        while queue:
-            key = queue.pop(0)
-            ans.append(key)
-            if key in copiedTable and copiedTable[key]:
-                item = ''
-                if 'ICN' in copiedTable[key]:
-                    item = copiedTable[key].pop(table[key].index('ICN'))
-                else:
-                    item = copiedTable[key].pop(0)
-                queue.append(item)
-            else:
-                flag = False
-                for _, v in copiedTable.items():
-                    if v:
-                        copiedTable = copy.deepcopy(table)
-                        copiedTable['ICN'].append(copiedTable['ICN'].pop(0))
-                        flag = True
-                        break
-                if not flag:
-                    return ans
+    dfs('ICN', [], tickets)
+    return min(ans)
 
 
-# print(solution([["ICN", "JFK"], ['HND', 'IAD'], ['JFK', 'HND']]),
-#       "\n['ICN', 'JFK', 'HND', 'IAD']")
-# print(solution([['ICN', 'SFO'], ['ICN', 'ATL'], ['SFO', 'ATL'], ['ATL', 'ICN'], [
-#       'ATL', 'SFO']]), "\n['ICN', 'ATL', 'ICN', 'SFO', 'ATL', 'SFO']")
-# print(solution([['ICN', 'B'], ['B', 'ICN'], ['ICN', 'A'], [
-#       'A', 'D'], ['D', 'A']]), "\n['ICN', 'B', 'ICN', 'A', 'D', 'A']")
-
-
-# print('출발지와 도착지가 같은게 여러개일 경우')
-# print(solution([['ICN', 'SFO'], ['SFO', 'ICN'], ['ICN', 'SFO'],
-#                 ['SFO', 'JFK']]), "\n['ICN', 'SFO', 'ICN', 'SFO', 'JFK']")
-
-# print('ICN을 항상 먼저 방문한다.')
-# print(solution([['ICN', 'A'], ['ICN', 'A'], ['A', 'ICN'],
-#                 ['A', 'C']]), "\n['ICN', 'A', 'ICN', 'A', 'C']")
-# print(solution([['ICN', 'A'], ['A', 'ICN'], ['A', 'B'],
-#                 ['ICN', 'A']]), "\n['ICN', 'A', 'ICN', 'A', 'B']")
-
-# print('출발지가 항상 첫번째 인덱스는 아니다.')
-# print(solution([['ICN', 'A'], ['ICN', 'B'], ['B', 'ICN']]),
-#       "\n['ICN', 'B', 'ICN', 'A']")
-# print(solution([['ICN', 'A'], ['A', 'C'], ['ICN', 'B'], ['B', 'ICN']]),
-#       "\n['ICN', 'B', 'ICN', 'A', 'C']")
-# print(solution([['ICN', 'BBB'], ['AAA', 'ICN'], ['ICN', 'AAA']]),
-#       "\n['ICN', 'AAA', 'ICN', 'BBB']")
-# print(solution([['ICN', 'ABB'], ['AAA', 'ICN'], ['ICN', 'AAA'], ['ICN', 'ADD'], [
-#       'ABB', 'ICN']]), "\n['ICN', 'AAA', 'ICN', 'ABB', 'ICN', 'ADD']")
-
-# print(solution([['ICN', 'AAA'], ['ICN', 'AAA'], ['AAA', 'ICN'],
-#                 ['AAA', 'CCC']]), "\n['ICN', 'AAA', 'ICN', 'AAA', 'CCC']")
-# print(solution([['ICN', 'AAA'], ['ICN', 'AAA'], ['ICN', 'AAA'],
-#                 ['AAA', 'ICN'], ['AAA', 'ICN']]), "\n['ICN', 'AAA', 'ICN', 'AAA', 'ICN', 'AAA']")
-
+print(solution([["ICN", "JFK"], ['HND', 'IAD'], ['JFK', 'HND']]),
+      "\n",['ICN', 'JFK', 'HND', 'IAD'])
+print(solution([['ICN', 'SFO'], ['ICN', 'ATL'], ['SFO', 'ATL'], ['ATL', 'ICN'], [
+      'ATL', 'SFO']]), "\n",['ICN', 'ATL', 'ICN', 'SFO', 'ATL', 'SFO'])
+print(solution([['ICN', 'B'], ['B', 'ICN'], ['ICN', 'A'], [
+      'A', 'D'], ['D', 'A']]), "\n",['ICN', 'B', 'ICN', 'A', 'D', 'A'])
+print(solution([['ICN', 'SFO'], ['SFO', 'ICN'], ['ICN', 'SFO'],
+                ['SFO', 'JFK']]), "\n",['ICN', 'SFO', 'ICN', 'SFO', 'JFK'])
+print(solution([['ICN', 'A'], ['ICN', 'A'], ['A', 'ICN'],
+                ['A', 'C']]), "\n",['ICN', 'A', 'ICN', 'A', 'C'])
+print(solution([['ICN', 'A'], ['A', 'ICN'], ['A', 'B'],
+                ['ICN', 'A']]), "\n",['ICN', 'A', 'ICN', 'A', 'B'])
+print(solution([['ICN', 'BBB'], ['AAA', 'ICN'], ['ICN', 'AAA']]),
+      "\n",['ICN', 'AAA', 'ICN', 'BBB'])
+print(solution([['ICN', 'ABB'], ['AAA', 'ICN'], ['ICN', 'AAA'], ['ICN', 'ADD'], [
+      'ABB', 'ICN']]), "\n",['ICN', 'AAA', 'ICN', 'ABB', 'ICN', 'ADD'])
+print(solution([['ICN', 'AAA'], ['ICN', 'AAA'], ['AAA', 'ICN'],
+                ['AAA', 'CCC']]), "\n",['ICN', 'AAA', 'ICN', 'AAA', 'CCC'])
+print(solution([['ICN', 'AAA'], ['ICN', 'AAA'], ['ICN', 'AAA'],
+                ['AAA', 'ICN'], ['AAA', 'ICN']]), "\n", ['ICN', 'AAA', 'ICN', 'AAA', 'ICN', 'AAA'])
+# 출발지가 항상 첫번째 인덱스는 아니다.
+print(solution([['ICN', 'A'], ['ICN', 'B'], ['B', 'ICN']]),
+      "\n", ['ICN', 'B', 'ICN', 'A'])
+print(solution([['ICN', 'A'], ['A', 'C'], ['ICN', 'B'], ['B', 'ICN']]),
+      "\n", ['ICN', 'B', 'ICN', 'A', 'C'])
+# 백트래킹으로 구현되어있는가?
 print(solution([['ICN', 'BOO'], ['ICN', 'COO'], ['COO', 'DOO'], ['DOO', 'COO'], [
-      'BOO', 'DOO'], ['DOO', 'BOO'], ['BOO', 'ICN'], ['COO', 'BOO']]), ['ICN', 'BOO', 'DOO', 'BOO', 'ICN', 'COO', 'DOO', 'COO', 'BOO'])
+      'BOO', 'DOO'], ['DOO', 'BOO'], ['BOO', 'ICN'], ['COO', 'BOO']]), "\n", ['ICN', 'BOO', 'DOO', 'BOO', 'ICN', 'COO', 'DOO', 'COO', 'BOO'])
