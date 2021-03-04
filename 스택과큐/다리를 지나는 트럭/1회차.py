@@ -53,6 +53,6 @@ def solution(BL, BW, TWs):
 print(solution(2, 10, [7,4,5,6]), 8)
 print(solution(100, 100, [10]), 101)
 print(solution(100, 100, [10 for _ in range(10)]), 110)
-print(solution(10000, 10000, [10 for _ in range(10)]), 110)
+print(solution(10000, 10000, [10 for _ in range(10)]), 10010)
 
     
