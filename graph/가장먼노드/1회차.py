@@ -7,6 +7,8 @@
 
 # 풀이법
 '''
+트리를 타고 내려갈 때마다 level+1을 저장한다
+
 처음에 
     for key, value in edge:
         if key in dic:
