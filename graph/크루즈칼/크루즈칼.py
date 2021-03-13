@@ -2,7 +2,6 @@
 그래프와 엣지가 주어질 때 전체를 보고 최단 거리를 구한다.
 프림 알고리즘은 거처간 노드에서 최단 거리 구함
 https://brownbears.tistory.com/396
-https://brownbears.tistory.com/396
 
 '''
 '''
