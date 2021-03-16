@@ -12,7 +12,8 @@ abcabc abcabc dedede dedede
 '''
 # 풀이법
 '''
-1, ..., S//2개수 만큼 앞에서부터 묶어 최적화한 값을 results에 넣고 최소 len 값을 반환한다.
+1. ..., S//2개수 만큼 앞에서부터 묶어 최적화한 값을 results에 넣고 최소 len 값을 반환한다.
+2. token화 시켜서 진행한다.(앞에서부터 n개, ..., n+1개씩 자른다.) string index에 접근해서 다루기 까다로움
 '''
 
 
@@ -28,20 +29,26 @@ def solution(S):
         tokens.append('!')  # end
 
         result = ''
-        while i > len(tokens):
-            j = i+1
+        cur = 0
+        while cur < len(tokens)-1:
+            next = cur+1
             cnt = 1
-            while tokens[i] == tokens[j]:
-                j += 1
+            while tokens[cur] == tokens[next]:
+                next += 1
                 cnt += 1
             else:
-                if cnt > 2:
-                    result += str(cnt) + tokens[i]
-                    i = j
+                if cnt >= 2:
+                    result += f'{cnt}{tokens[cur][0]}'
                 else:
-                    result += tokens[i]
+                    result += tokens[cur][0]
+                cur = next
         ans = min(ans, len(result))
     return ans
 
 
-print(solution('aabbcc'))
+print(solution('aabbcc'), 6)
+print(solution('aabbaccc'), 7)
+print(solution('ababcdcdababcdcd'), 9)
+print(solution('abcabcdede'), 8)
+print(solution('abcabcabcabcdededededede'), 14)
+print(solution('xababcdcdababcdcd'), 17)
