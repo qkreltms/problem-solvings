@@ -34,3 +34,63 @@ u = ()
 v = f( "" )
 반환 ()
 '''
+
+def isCorrect(string):
+  i = 0
+  l = len(string)//2
+  while string:
+    if i > l:
+      return False 
+    j = string.find("()")
+    if j == -1:
+      return False
+    if j+2 > len(string):
+      string = string[0:j]
+    else:
+      string = string[0:j] + string[j+2:]
+    i+=1
+  return True
+
+def isPair(string):
+  cnt = 0
+  for s in string:
+    if s == "(":
+      cnt += 1
+    elif s == ")":
+      cnt -= 1
+  if cnt == 0:
+    return True
+  return False
+
+def getUV(string):
+  target = ''
+  s = string
+  while s:
+    target += s[0:2]
+    s = s[2:]
+    if isPair(target):
+      break
+  return [target, s]
+
+def f(string):
+  if not string:
+    return ''
+  u, v = getUV(string)
+  if isCorrect(u):
+    v = f(v)
+    return f'{u}{v}'
+  u = u[1:]
+  u = u[:-1]
+  u = list(u)
+  for i in range(len(u)):
+    if u[i] == '(':
+      u[i] = ')'
+    else:
+      u[i] = '(' 
+  u = ''.join(u)
+  return f'({f(v)}){u}'
+
+print(f("()))((()"), '()(())()')
+
+  
+
