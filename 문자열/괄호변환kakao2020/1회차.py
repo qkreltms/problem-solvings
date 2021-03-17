@@ -90,6 +90,9 @@ def f(string):
   u = ''.join(u)
   return f'({f(v)}){u}'
 
+def solution(string):
+  return f(string)
+
 print(f("()))((()"), '()(())()')
 
   
