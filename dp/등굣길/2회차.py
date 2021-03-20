@@ -1,3 +1,8 @@
+
+# 풀이 법
+'''
+다른 사람.py 참고
+'''
 def solution(w, h, puddles):
     myMap = [[0 for _ in range(w+1)] for _ in range(h+1)]
     myMap[1][1] = 1
