@@ -1,5 +1,6 @@
 # 문제
 '''
+https://programmers.co.kr/learn/courses/30/parts/12486
 입국심사를 진행한다.
 심사관마다 심사 시간이 다르다.
 줄 하나가 있다.
