@@ -19,3 +19,5 @@ class Solution:
 
 print(Solution().isPalindrome(-121), False)
 print(Solution().isPalindrome(121), True)
+print(Solution().isPalindrome('cddcddc'), True)
+print(Solution().isPalindrome(1), True)
