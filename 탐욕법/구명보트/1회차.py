@@ -93,7 +93,7 @@ def solution(people, limit):
     while i <= j:
         if people[i] + people[j] <= limit:
             j -= 1
-         i += 1
+        i += 1
         answer += 1
     return answer
 

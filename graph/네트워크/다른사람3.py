@@ -1,5 +1,5 @@
 '''
-플루이도-워샬 알고리즘 응용
+플루이드-워샬 알고리즘 응용
 '''
 def solution(n, computers):
     temp = []
