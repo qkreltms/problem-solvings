@@ -1,3 +1,5 @@
+// NOTE: 시간초과로 풀이에 실패한 문제
+
 //링크
 /*
 문제: https://leetcode.com/problems/longest-palindromic-substring/
