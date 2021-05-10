@@ -1,5 +1,7 @@
 def solution(N, number):
     def f():
+        if N == number:
+          return 1
         A=[set() for _ in range(8)]
         for i in range(8):
             A[i].add(int(str(N)*(i+1)))
