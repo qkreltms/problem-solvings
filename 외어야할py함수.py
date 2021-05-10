@@ -68,3 +68,14 @@ sorted([[1,2], [1,1]], key=lambda x:(x[0], -x[1]))
 [2,1,1].pop(0) # [1,1], return 2
 # 값으로 삭제
 [2,1,1].remove(2) # [1,1], return 없음
+
+# find(target, startIndex) vs index(target)
+# find는 target이 없으면 -1, index는 throws an error 
+
+# a//b vs int(a/b)
+# a가 음수일 때 두개의 값이 다르게 나온다.
+# 1) print(-5055//7)
+# 2) print(int(-5055/7))
+# 처음시도 1번에서는 -723이 나옴
+# 2번에서는 -722가 나옴
+# 값이 서로 다름
