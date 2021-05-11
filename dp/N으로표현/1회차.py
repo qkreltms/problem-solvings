@@ -1,5 +1,7 @@
 # 문제
 '''
+링크: https://programmers.co.kr/learn/courses/30/lessons/42895
+
 아래와 같이 5와 사칙연산만으로 12를 표현할 수 있습니다.
 
 12 = 5 + 5 + (5 / 5) + (5 / 5)
