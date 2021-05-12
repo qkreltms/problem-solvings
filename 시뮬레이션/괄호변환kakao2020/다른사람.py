@@ -1,3 +1,7 @@
+# 키 포인트
+'''
+다른 사람2방식을 최적화한것
+'''
 def solution(p):
     if p=='': return p
     r=True; c=0

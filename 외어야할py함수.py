@@ -19,9 +19,9 @@ N, *arr = map(int, input().split())
 # AAA
 arr = [list(input()) for _ in range(N)] # [['A', ...], ['A', ...]]
 
-# [1,2,3,4]
-''.join(A) # '1234'
-'\n'.join(A) # '1\n2\n3\n4'
+# 리스트합치기
+''.join([1,2,3,4]) # '1234'
+'\n'.join([1,2,3,4]) # '1\n2\n3\n4'
 
 # 최대값 받기
 import sys
@@ -79,3 +79,13 @@ sorted([[1,2], [1,1]], key=lambda x:(x[0], -x[1]))
 # 처음시도 1번에서는 -723이 나옴
 # 2번에서는 -722가 나옴
 # 값이 서로 다름
+
+# 디스트럭팅할 때 주의!!
+# U,V=['', 1]는 에러 발생
+# U,V=('', 1)은 정상
+
+from collections import Counter
+c = Counter('(())') # Counter: { '(': 2, ')': 2}
+if c[')'] == c['(']:
+  print(True)
+print(False)

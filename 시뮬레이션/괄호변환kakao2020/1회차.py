@@ -96,6 +96,7 @@ def solution(string):
   return f(string)
 
 print(f("()))((()"), '()(())()')
+print(f("(()())()"), '(()())()')
 
   
 
