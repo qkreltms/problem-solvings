@@ -23,7 +23,8 @@ k개의 글자는 a,b,c,d,....를 말함
 비트마스크를 쓰지 않으면 k개의 글자로 단어를 읽을 때 n^2의 소요시간이 걸림
 사용하면 n 만에 가능 
 
-a-z에서 antic을 제거해 bdefghjklmopqrsuvwxyz 만드는 과정이 오래걸림 추후에는 a-z써놓고 소거하는 식으로 할 것 
+a-z에서 antic을 제거해 bdefghjklmopqrsuvwxyz 만드는 과정이 오래걸림 추후에는 a-z써놓고 소거하는 식으로 할 것
+또는 from string import ascii_lowercase 써서 만들기 
 '''
 
 

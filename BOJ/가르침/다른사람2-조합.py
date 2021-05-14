@@ -30,6 +30,11 @@ else:
     for x in list(combinations(except_acitn, k - 5)):
         count = 0
         for word in words:
+            # note: 
+            # set([1])-set([1,2]) = set()
+            # set([])-set([1,2]) = set()
+            # set([3])-set([1,2]) = {3}
+            # 차집합은 A-B일 때 A에서 B의 원소를 제거한다.
             if not word.difference(x):
                 count += 1
 
