@@ -12,6 +12,10 @@
 
 ([][])에서 "([]" 일 때
 r=2X3 값을 적용하고
+
+"([]]" 일 때
+i-1번지가 ]이므로 무시한다.
+
 "([][]" 일 때
 r+=2X3
 "([][])" 일 때
@@ -56,16 +60,16 @@ def f(s):
     if stack:
        return 0
     return ans
-s=list(input())
-print(f(s))
+# s=list(input())
+# print(f(s))
 
 
-print(f('()[]'),5)
-print(f('()'),2)
-print(f(')'),0)
-print(f(']'),0)
-print(f(')(()'),0)
-print(f('(]'),0)
+# print(f('()[]'),5)
+# print(f('()'),2)
+# print(f(')'),0)
+# print(f(']'),0)
+# print(f(')(()'),0)
+# print(f('(]'),0)
 print(f('[[[[]]]]'),81)
-print(f('(([]))(()())'),20)
-print(f('(([]))(()()))'),0)
+# print(f('(([]))(()())'),20)
+# print(f('(([]))(()()))'),0)
