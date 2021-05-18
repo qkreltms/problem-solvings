@@ -69,7 +69,7 @@ sorted([[1,2], [1,1]], key=lambda x:(x[0], -x[1]))
 # 값으로 삭제
 [2,1,1].remove(2) # [1,1], return 없음
 
-# find(target, startIndex) vs index(target)
+# "".find(target, startIndex) vs "".index(target) or [].index(target)
 # find는 target이 없으면 -1, index는 throws an error 
 
 # a//b vs int(a/b)
