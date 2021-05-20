@@ -89,3 +89,6 @@ c = Counter('(())') # Counter: { '(': 2, ')': 2}
 if c[')'] == c['(']:
   print(True)
 print(False)
+
+# zip
+print(list(zip([1,2,3], [3,4], [6,7]))) # [(1, 3, 6), (2, 4, 7)]
