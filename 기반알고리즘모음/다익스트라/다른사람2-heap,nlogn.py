@@ -25,6 +25,7 @@ def dijkstra(start):
     distance[start] = 0
     while q:    #큐가 비어있지 않다면
         #가장 최단 거리가 짧은 노드에 대한 정보 꺼내기
+        #heap은 기본적으로 min heap
         dist, now = heapq.heappop(q)
         # 현재 노드가 이미 처리된 적이 있는 노드라면 무시
         if distance[now] < dist:
