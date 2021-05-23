@@ -1,3 +1,5 @@
+# 참고: https://freedeveloper.tistory.com/384
+
 import heapq
 import sys
 INF = int(1e9)  #무한을 의미하는 값으로 10억을 설정.
