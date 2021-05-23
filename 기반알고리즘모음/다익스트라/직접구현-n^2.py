@@ -3,7 +3,7 @@
 import sys
 n, m = 6, 11
 INF = sys.maxsize
-startI = 2
+startI = 1
 visiteds = [False for _ in range(n+1)]
 distances = [INF for _ in range(n+1)]
 graphs = [
