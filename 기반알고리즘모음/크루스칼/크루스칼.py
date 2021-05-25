@@ -5,9 +5,9 @@ https://brownbears.tistory.com/396
 
 '''
 '''
-rank의 목적 자세히 알아보기
-성능 줄이기
-백지에 알고리즘 써보기
+rank의 목적 자세히 알아보기 =>  
+비대칭적 트리가 되었을 때 배열로 순회하는게 더 빠름 rank 사용해 최적화 
+https://bowbowbow.tistory.com/26
 '''
 
 
@@ -20,6 +20,7 @@ class DisjointSet:
             self.rank[i] = 0
 
     def find(self, v):
+        # 자식 노드가 최상위 부모를 가리키도록 높이를 최적화한다.
         if self.parent[v] != v:
             self.parent[v] = self.find(self.parent[v])
         return self.parent[v]
@@ -38,7 +39,7 @@ def kruskal(n, info):
     disjointset = DisjointSet(n)
     result = []
     for data in sorted(info, key=lambda cost: cost[2]):
-        v, u, weight = data
+        v, u, _ = data
         root1 = disjointset.find(v)
         root2 = disjointset.find(u)
         if root1 != root2:

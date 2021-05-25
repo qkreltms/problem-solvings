@@ -1,3 +1,15 @@
+#링크
+'''
+문제: https://www.acmicpc.net/problem/1916
+'''
+#풀이 법
+'''
+다익스트라
+'''
+#키포인트
+'''
+'''
+
 import heapq
 import sys
 INF = sys.maxsize

@@ -28,7 +28,7 @@ def kruskal(nodeNum, data):
     for d in sorted(data, key=lambda k: k[2]):
         x = unionFind.find(d[0])
         y = unionFind.find(d[1])
-        if x is not y:
+        if x != y:
             unionFind.union(x, y)
             paths.append([d[0], d[1]])
             weight += d[2]
