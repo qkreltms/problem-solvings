@@ -26,6 +26,7 @@ class DisjointSet:
         return self.parent[v]
 
     def union(self, root1, root2):
+        # find에서 트리 높이를 줄이기 + union에서도 줄임
         if self.rank[root1] > self.rank[root2]:
             self.parent[root2] = root1
         else:
