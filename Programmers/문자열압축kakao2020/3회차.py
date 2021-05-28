@@ -1,4 +1,9 @@
-import sys
+# 키포인트
+'''
+for j in range(0,len(s),i):
+  nextPick=s[j:j+1]
+위처럼 함으로써 aabbaccc에서 3칸 씩자를 때 cc까지 잘라줌
+'''
 def solution(s):
     def f():
         if len(s) < 4:
