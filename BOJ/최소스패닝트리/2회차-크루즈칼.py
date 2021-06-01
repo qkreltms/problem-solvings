@@ -1,3 +1,4 @@
+# 최적화 기법 2가지 쓰임, rank, 흔적 담아서 e-1개만 수행하기
 v,e=map(int,input().split())
 edges=[]
 roots=[i for i in range(v+1)]
