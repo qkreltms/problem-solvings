@@ -18,7 +18,6 @@ def kmp(s,p):
       j+=1
       if j==len(p):
         return 1
-        j=table[j-1]
   return 0
 s=input()
 p=input()
