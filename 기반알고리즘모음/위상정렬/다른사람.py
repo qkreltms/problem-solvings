@@ -1,3 +1,5 @@
+# 참고: https://freedeveloper.tistory.com/390
+
 from collections import deque
 
 # 노드의 개수와 간선의 개수를 입력 받기
