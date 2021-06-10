@@ -10,6 +10,7 @@ ans=0
 while start<=end:
     mid=(start+end)//2
     hap=mid*(mid+1)//2
+    # 중간값으로 구한 합과 입력으로 들어온 합을 비교한다.
     if hap>s:
         end=mid-1
     else:
