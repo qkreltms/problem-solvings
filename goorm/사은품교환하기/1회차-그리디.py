@@ -1,4 +1,7 @@
+# 문제
 '''
+링크: https://level.goorm.io/exam/47878/%EC%82%AC%EC%9D%80%ED%92%88-%EA%B5%90%ED%99%98%ED%95%98%EA%B8%B0/quiz/1
+
 쿠폰 => 상품 교환
 N 최소 5장
 M 최소 7장 
