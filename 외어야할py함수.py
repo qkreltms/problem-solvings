@@ -6,6 +6,7 @@ llo="llo"
 f'he {llo} world!'
 
 # 입출력 가속화
+import collections
 import sys
 input = sys.stdin.readline 
 print = sys.stdout.write
@@ -95,4 +96,19 @@ print(list(zip([1,2,3], [3,4], [6,7]))) # [(1, 3, 6), (2, 4, 7)]
 
 # 인덱스 슬라이싱때 끝 값은 어떤 값이 되든지 상관없다.
 print([1,2,3,4][3:4000000]) # [4]
+
+# deque
+import collections, itertools
+q=collections.deque([1,2,3,4,5])
+list(itertools.islice(q,3,7))
+q.extend('ab') # list와 마찬가지로 iterable 을 삽입
+q.extendleft(['a','b'])
+q.append('a')
+q.appendleft('a')
+q.pop()
+q.popleft()
+deq = collections.deque(['a', 'b', 'c', 'd', 'e'])
+deq.rotate(1) # e a b c d
+deq = collections.deque(['a', 'b', 'c', 'd', 'e'])
+deq.rotate(1) # b c d e a
 
