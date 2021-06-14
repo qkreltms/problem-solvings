@@ -13,6 +13,6 @@ def solution(N, K, iw, iv):
                 table[i][j] = table[i-1][j]
     return table[N][K]
 
-
-print(solution(1, 4, [2], [2]), 2)
-print(solution(3, 30, [5, 10, 20], [5, 6, 14]), 20)
+print(solution(4, 12, [3,4,5,6], [6,8,12,13]))
+# print(solution(1, 4, [2], [2]), 2)
+# print(solution(3, 30, [5, 10, 20], [5, 6, 14]), 20)
