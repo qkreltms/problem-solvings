@@ -33,3 +33,5 @@ def f(s):
     return f'({f(v)}){"".join(list(map(lambda x:"(" if x == ")" else ")" ,u[1:-1])))}'
 def solution(P):
     return f(P)
+
+solution("(()())()")
