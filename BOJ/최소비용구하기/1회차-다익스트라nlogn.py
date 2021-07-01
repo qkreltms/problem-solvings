@@ -8,6 +8,7 @@
 '''
 #키포인트
 '''
+시작은 (0, start)
 '''
 
 import heapq
