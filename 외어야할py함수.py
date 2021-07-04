@@ -112,5 +112,5 @@ q.popleft()
 deq = collections.deque(['a', 'b', 'c', 'd', 'e'])
 deq.rotate(1) # e a b c d
 deq = collections.deque(['a', 'b', 'c', 'd', 'e'])
-deq.rotate(1) # b c d e a
+deq.rotate(-1) # b c d e a
 

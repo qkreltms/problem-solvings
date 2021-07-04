@@ -9,6 +9,7 @@ dp=[0 for _ in range(n+1)]
 dp[0]=1
 for bag in [3,5]:
     for j in range(bag,n+1):
+        # 가장 큰수로 나눠지면 무조건 이 값이 작은 값이다.
         if j%bag==0:
             dp[j]=j//bag
         elif dp[j-bag]==0:
