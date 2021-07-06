@@ -91,6 +91,10 @@ if c[')'] == c['(']:
   print(True)
 print(False)
 
+# Counter 사용해 set이랑 동일하게 구현 가능
+list(Counter(['a','b','c']) - Counter(['a','b']))[0]
+list(set(['a','b','c']) - set(['a','b']))[0]
+
 # zip
 print(list(zip([1,2,3], [3,4], [6,7]))) # [(1, 3, 6), (2, 4, 7)]
 
