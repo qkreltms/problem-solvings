@@ -118,3 +118,5 @@ deq.rotate(1) # e a b c d
 deq = collections.deque(['a', 'b', 'c', 'd', 'e'])
 deq.rotate(-1) # b c d e a
 
+# map에서 lambda 사용 법
+map(lambda x: x[1], [(1,2)])
