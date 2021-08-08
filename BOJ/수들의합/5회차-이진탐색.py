@@ -1,6 +1,5 @@
 s=int(input())
 l,r=0,s
-m=s//2
 ans=0
 while l<=r:
     mid=(l+r)//2
