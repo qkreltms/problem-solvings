@@ -1,3 +1,4 @@
+# m*(m+1)//2
 n=int(input())
 def f():
     l,r=0,n
